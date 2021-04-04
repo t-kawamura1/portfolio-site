@@ -44,11 +44,10 @@ export default {
 
 <style lang="scss" scoped>
 .tools {
-  padding: 100px 30px;
+  padding: 100px 60px;
   background-color: #eee;
   .tools-container {
     display: flex;
-    // flex-wrap: nowrap;
     justify-content: space-around;
     .tools-item {
       margin: 0 20px;
@@ -76,7 +75,6 @@ export default {
           position: absolute;
           width: 50%;
         }
-        
       }
       .tool-text {
         line-height: 2;

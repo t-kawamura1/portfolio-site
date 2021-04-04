@@ -18,7 +18,7 @@ export default {
 <style lang="scss" scoped>
 .hero {
   color: #636363;
-  padding: 170px 30px 220px;
+  padding: 170px 60px 220px;
   .title {
     margin-bottom: 40px;
     font-weight: 200;

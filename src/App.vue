@@ -72,10 +72,7 @@ h1, h2, h3, div, p, a, button, nav, ul, li, header {
 .heading {
   margin-bottom: 60px;
   font-size: 5rem;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 1px;
-  &.bright {
-    color: #fff;
-  }
 }
 </style>

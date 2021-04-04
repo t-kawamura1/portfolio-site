@@ -1,6 +1,6 @@
 <template>
   <div class="portfolio">
-    <h2 class="heading bright">PORTFOLIO</h2>
+    <h2 class="heading">PORTFOLIO</h2>
     <div class="portfolio-container">
       <div class="portfolio-item">
         <img src="../assets/site-img-ex1.jpg" alt="サイトスクリーンショット" class="site-image">
@@ -36,14 +36,14 @@ export default {
 
 <style lang="scss" scoped>
 .portfolio {
-  padding: 100px 30px;
+  padding: 100px 60px;
+  color: #fff;
   background-color: #777;
 }
 .portfolio-container {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-around;
-  color: #fff;
   .portfolio-item {
     margin: 0 20px;
     position: relative;
