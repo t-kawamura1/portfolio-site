@@ -18,7 +18,10 @@ export default {
 <style lang="scss" scoped>
 .hero {
   color: #636363;
-  padding: 170px 60px 220px;
+  padding: 190px 60px 220px;
+  background: rgba(255, 255, 255, 0.6) url('../assets/home-bg1.jpg') no-repeat fixed left bottom;
+  background-size: cover;
+  background-blend-mode: lighten;
   .title {
     margin-bottom: 40px;
     font-weight: 200;

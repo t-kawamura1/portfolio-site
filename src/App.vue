@@ -31,9 +31,6 @@ body {
   font-size: 1.6rem;
   color: #333;
   text-align: center;
-  background: rgba(255, 255, 255, 0.6) url('./assets/home-bg1.jpg') no-repeat fixed left bottom;
-  background-size: cover;
-  background-blend-mode: lighten;
 }
 a {
   vertical-align:baseline;

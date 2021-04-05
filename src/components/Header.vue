@@ -14,6 +14,6 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  z-index: 1;
+  position: fixed;
 }
 </style>
