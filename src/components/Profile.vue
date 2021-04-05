@@ -38,6 +38,7 @@ export default {
   padding: 100px 90px 60px 100px;
   background: rgba(255, 255, 255, 0.6) url('../assets/home-bg2.jpg') no-repeat fixed top;
   background-size: cover;
+  color: #636363;
   .profile-container {
     display: flex;
     flex-wrap: wrap;

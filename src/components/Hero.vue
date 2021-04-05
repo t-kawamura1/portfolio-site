@@ -19,7 +19,7 @@ export default {
 .hero {
   color: #636363;
   padding: 190px 60px 220px;
-  background: rgba(255, 255, 255, 0.6) url('../assets/home-bg1.jpg') no-repeat fixed left bottom;
+  background: rgba(255, 255, 255, 0.7) url('../assets/home-bg1.jpg') no-repeat fixed left bottom;
   background-size: cover;
   background-blend-mode: lighten;
   .title {

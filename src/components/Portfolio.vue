@@ -71,26 +71,26 @@ export default {
       margin: 0 20px 30px;
       line-height: 2;
     }
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-    &::after {
-      content: 'COMING SOON';
-      display: inline-block;
-      position: absolute;
-      width: 100%;
-      color: #fff;
-      font-size: 3rem;
-      top: 50%;
-      left: 0;
-    }
+    // &::before {
+    //   content: '';
+    //   display: block;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   background-color: rgba(0, 0, 0, 0.5);
+    // }
+    // &::after {
+    //   content: 'COMING SOON';
+    //   display: inline-block;
+    //   position: absolute;
+    //   width: 100%;
+    //   color: #fff;
+    //   font-size: 3rem;
+    //   top: 50%;
+    //   left: 0;
+    // }
   }
 }
 </style>
