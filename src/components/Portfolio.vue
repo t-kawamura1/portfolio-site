@@ -39,57 +39,94 @@ export default {
   padding: 100px 60px;
   color: #fff;
   background-color: #777;
-}
-.portfolio-container {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  .portfolio-item {
-    margin: 0 20px;
-    position: relative;
-    .site-image {
-    display: block;
-    margin-bottom: 50px;
-    width: 100%;
-    }
-    .portfolio-title {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-      letter-spacing: 1px;
-    }
-    .portfolio-link {
-      display: inline-block;
-      margin-bottom: 30px;
-      color: #fff;
-      font-weight: 300;
-      &:hover {
-        opacity: 0.8;
-      }
-    }
-    .portfolio-text {
-      display: inline-block;
-      margin: 0 20px 30px;
-      line-height: 2;
-    }
-    &::before {
-      content: '';
+  p {
+    text-align: left;
+  }
+  .portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .portfolio-item {
+      width: 45%;
+      position: relative;
+      .site-image {
       display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
+      margin-bottom: 50px;
       width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      }
+      .portfolio-title {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+      }
+      .portfolio-link {
+        display: inline-block;
+        margin-bottom: 30px;
+        color: #fff;
+        font-weight: 300;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+      .portfolio-text {
+        display: inline-block;
+        margin-bottom: 30px;
+        line-height: 2;
+      }
+      // &::before {
+      //   content: '';
+      //   display: block;
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   width: 100%;
+      //   height: 100%;
+      //   background-color: rgba(0, 0, 0, 0.5);
+      // }
+      // &::after {
+      //   content: 'COMING SOON';
+      //   display: inline-block;
+      //   position: absolute;
+      //   width: 100%;
+      //   color: #fff;
+      //   font-size: 3rem;
+      //   top: 20%;
+      //   left: 0;
+      //   letter-spacing: 3px;
+      // }
     }
-    &::after {
-      content: 'COMING SOON';
-      display: inline-block;
-      position: absolute;
-      width: 100%;
-      color: #fff;
-      font-size: 3rem;
-      top: 50%;
-      left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio {
+    padding: 50px 30px 40px;
+    .portfolio-container {
+      flex-direction: column;
+      .portfolio-item {
+        width: 100%;
+        &:first-child {
+          padding-bottom: 20px;
+          border-bottom: 1px solid #fff;
+        }
+        &:last-child {
+          margin-top: 50px;
+        }
+        .site-image {
+          margin-bottom: 30px;
+        }
+        .portfolio-title {
+          font-size: 2.2rem;
+        }
+        .portfolio-link:hover {
+            opacity: 1;
+        }
+        // &::after {
+        //   font-size: 2.5rem;
+        //   top: 15%;
+        //   letter-spacing: 2px;
+        // }
+      }
     }
   }
 }

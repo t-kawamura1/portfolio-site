@@ -27,6 +27,9 @@ html {
 body {
   margin: 0;
   font-family: 'Montserrat', "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  background: rgba(255, 255, 255, 0.7) url('./assets/home-bg.jpg') no-repeat fixed left bottom;
+  background-size: cover;
+  background-blend-mode: lighten;
   line-height: 1;
   font-size: 1.6rem;
   color: #333;
@@ -71,5 +74,24 @@ h1, h2, h3, div, p, a, button, nav, ul, li, header {
   font-size: 5rem;
   font-weight: 400;
   letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .button {
+    width: 150px;
+    padding: 10px;
+    font-size: 1.7rem;
+    &:hover {
+      background-color: #777;
+    }
+    &.bright:hover{
+      background-color: #777;
+    }
+  }
+  .heading {
+    margin-bottom: 40px;
+    font-size: 3rem;
+    font-weight: 300;
+  }
 }
 </style>
