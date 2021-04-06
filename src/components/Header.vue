@@ -3,6 +3,7 @@
     <h1 class="logo"><router-link to="/">T.K</router-link></h1>
     <nav>
       <ul class="global-nav">
+
         <li class="nav-item"><a href="#">PORTFOLIO</a></li>
         <li class="nav-item"><a href="#">SKILLS</a></li>
         <li class="nav-item"><a href="#">STANCES</a></li>
