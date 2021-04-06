@@ -19,9 +19,6 @@ export default {
 .hero {
   color: #636363;
   padding: 190px 60px 220px;
-  background: rgba(255, 255, 255, 0.7) url('../assets/home-bg1.jpg') no-repeat fixed left bottom;
-  background-size: cover;
-  background-blend-mode: lighten;
   .title {
     margin-bottom: 40px;
     font-weight: 200;
@@ -33,6 +30,22 @@ export default {
     font-weight: 300;
     font-size: 2.8rem;
     letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background: none;
+    padding: 100px 30px 60px;
+    .title {
+      margin-bottom: 25px;
+      font-size: 4rem;
+      letter-spacing: 2px;
+    }
+    .sub-title {
+      margin-bottom: 60px;
+      font-size: 1.5rem;
+    }
   }
 }
 </style>

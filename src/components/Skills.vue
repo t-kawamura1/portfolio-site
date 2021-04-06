@@ -46,6 +46,9 @@ export default {
 .skills {
   padding: 100px 60px;
   background-color: #eee;
+  p {
+    text-align: left;
+  }
   .skills-container {
     display: flex;
     justify-content: space-around;
@@ -78,6 +81,41 @@ export default {
       }
       .skill-text {
         line-height: 2;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .skills {
+    padding: 50px 30px;
+    .skills-container {
+      flex-direction: column;
+      .skills-item {
+        width: 100%;
+        margin: 0 auto 30px;
+        padding: 0 0 30px;
+        border-bottom: 1px solid #777;
+        &:last-child {
+          margin-bottom: 0;
+          padding-bottom: 0;
+          border-bottom: none;
+        }
+        .skill-title {
+          font-size: 2.2rem;
+          margin: 10px 0 20px;
+        }
+        .skill-image {
+          height: 130px;
+          margin-bottom: 20px;
+        }
+        .infra-image {
+          height: 130px;
+          margin-bottom: 10px;
+          & .docker, & .aws {
+            width: 40%;
+          }
+        }
       }
     }
   }

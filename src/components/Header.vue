@@ -3,7 +3,8 @@
     <h1 class="logo"><router-link to="/">T.K</router-link></h1>
     <nav>
       <ul class="global-nav">
-        <li class="nav-item"><a href="#" class="aaa">PORTFOLIO</a></li>
+
+        <li class="nav-item"><a href="#">PORTFOLIO</a></li>
         <li class="nav-item"><a href="#">SKILLS</a></li>
         <li class="nav-item"><a href="#">STANCES</a></li>
         <li class="nav-item"><a href="#">PROFILE</a></li>
@@ -29,7 +30,7 @@ export default {
   z-index: 10;
   background-color: rgba(255, 255, 255, 0.5);
   width: 100%;
-  height: 54px;
+  height: 50px;
   a {
     display: inline-block;
     font-weight: 300;
@@ -46,7 +47,33 @@ export default {
     .nav-item {
       margin-right: 30px;
       > a {
-        font-size: 1.1em;
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    justify-content: space-between;
+    padding: 0 0 0 15px;
+    a:hover {
+      opacity: 1;
+    }
+    .logo
+    > a {
+      font-size: 2.6rem;
+      line-height: 26px;
+      height: 26px;
+    }
+    .global-nav {
+      padding: 0;
+      justify-content: flex-end;
+      .nav-item {
+        margin-right: 10px;
+        > a {
+          font-size: 1.3rem;
+        }
       }
     }
   }
