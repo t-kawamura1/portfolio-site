@@ -45,7 +45,7 @@ export default {
 <style lang="scss" scoped>
 .skills {
   padding: 100px 60px;
-  background-color: #eee;
+  background-color: none;
   p {
     text-align: left;
   }

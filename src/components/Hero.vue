@@ -36,14 +36,14 @@ export default {
 @media (max-width: 768px) {
   .hero {
     background: none;
-    padding: 100px 30px 60px;
+    padding: 200px 30px 60px;
     .title {
-      margin-bottom: 25px;
+      margin-bottom: 50px;
       font-size: 4rem;
       letter-spacing: 2px;
     }
     .sub-title {
-      margin-bottom: 60px;
+      margin-bottom: 120px;
       font-size: 1.5rem;
     }
   }

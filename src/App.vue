@@ -27,9 +27,6 @@ html {
 body {
   margin: 0;
   font-family: 'Montserrat', "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-  background: rgba(255, 255, 255, 0.7) url('./assets/home-bg.jpg') no-repeat fixed left bottom;
-  background-size: cover;
-  background-blend-mode: lighten;
   line-height: 1;
   font-size: 1.6rem;
   color: #333;
