@@ -1,21 +1,31 @@
 <template>
   <header class="header">
     <h1 class="logo"><router-link to="/">T.K</router-link></h1>
-    <nav>
-      <ul class="global-nav">
-
-        <li class="nav-item"><a href="#">PORTFOLIO</a></li>
-        <li class="nav-item"><a href="#">SKILLS</a></li>
-        <li class="nav-item"><a href="#">STANCES</a></li>
-        <li class="nav-item"><a href="#">PROFILE</a></li>
+    <nav class="nav">
+      <ul class="nav-ul">
+        <nav-list-item :navListItems="navListItems"/>
       </ul>
     </nav>
   </header>
 </template>
 
 <script>
-export default {
+import NavListItem from '@/components/shared/NavListItem'
 
+export default {
+  components: {
+    NavListItem
+  },
+  data() {
+    return {
+      navListItems: [
+        'PORTFOLIO',
+        'SKILLS',
+        'STANCES',
+        'PROFILE'
+      ]
+    }
+  }
 }
 </script>
 
@@ -31,7 +41,7 @@ export default {
   background-color: rgba(255, 255, 255, 0.5);
   width: 100%;
   height: 50px;
-  a {
+  .logo > a {
     display: inline-block;
     font-weight: 300;
     color: #636363;
@@ -41,14 +51,10 @@ export default {
       opacity: 0.5;
     }
   }
-  .global-nav {
-    display: flex;
-    justify-content: space-between;
-    .nav-item {
-      margin-right: 30px;
-      > a {
-        font-size: 2rem;
-      }
+  .nav {
+    width: 500px;
+    .nav-ul {
+      padding: 0;
     }
   }
 }
@@ -56,24 +62,22 @@ export default {
 @media (max-width: 768px) {
   .header {
     justify-content: space-between;
-    padding: 0 0 0 15px;
+    padding: 0 0 0 10px;
     a:hover {
       opacity: 1;
     }
-    .logo
-    > a {
+    .logo > a {
       font-size: 2.6rem;
       line-height: 26px;
       height: 26px;
+      &:hover {
+        opacity: 1;
+      }
     }
-    .global-nav {
-      padding: 0;
-      justify-content: flex-end;
-      .nav-item {
-        margin-right: 10px;
-        > a {
-          font-size: 1.3rem;
-        }
+    .nav {
+      width: 270px;
+      .nav-ul {
+        padding: 0;
       }
     }
   }
