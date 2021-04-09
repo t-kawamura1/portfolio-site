@@ -162,11 +162,9 @@ export default {
     showComponent() {
       var element = document.getElementsByClassName('fadein');
       if (!element) return;
-
       var showTiming = window.innerHeight > 950 ? 200 : 80;
       var scrollY = window.pageYOffset;
       var windowH = window.innerHeight;
-
       for (var i = 0; i < element.length; i++) {
         var elementClientRect = element[i].getBoundingClientRect();
         var elementY = scrollY + elementClientRect.top;

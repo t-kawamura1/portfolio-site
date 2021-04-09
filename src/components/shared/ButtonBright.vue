@@ -1,5 +1,5 @@
 <template>
-  <div class="button-bright">{{ buttonText }}</div>
+  <div class="button-bright" @click="clickButton">{{ buttonText }}</div>
 </template>
 
 <script>
@@ -7,6 +7,11 @@ export default {
   props: {
     buttonText: String
   },
+  methods: {
+    clickButton() {
+      this.$emit('show-more-detail')
+    }
+  }
 }
 </script>
 
