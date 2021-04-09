@@ -1,10 +1,14 @@
 <template>
-  <h1 class="logo"><router-link to="/" class="logo-link">T.K</router-link></h1>
+  <h1 class="logo" @click="clickTo"><router-link to="/" class="logo-link">T.K</router-link></h1>
 </template>
 
 <script>
 export default {
-
+  methods: {
+    clickTo() {
+      this.$emit('click-to')
+    }
+  }
 }
 </script>
 

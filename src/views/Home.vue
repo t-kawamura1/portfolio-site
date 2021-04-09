@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
+  <div class="home" ref="home">
     <header class="home-header">
-      <logo/>
+      <logo @click-to="scrollToAnchorPoint('home')"/>
       <nav class="nav">
         <ul class="nav-list">
           <nav-list-item
@@ -23,15 +23,22 @@
         </ul>
       </nav>
     </header>
-    <div class="hero">
+    <transition name="button-fade">
+      <to-top-button
+        v-if="show"
+        @click-to="scrollToAnchorPoint('home')"
+        class="to-top-button"
+      />
+    </transition>
+    <section class="hero">
       <h1 class="title">T.KAWAMURA</h1>
       <p class="sub-title">Make the world efficient and fun.</p>
       <div class="hero-buttons-box">
         <button-dark button-text="Portfolio" @scroll-to="scrollToAnchorPoint('portfolio')"/>
         <button-dark button-text="About me" @scroll-to="scrollToAnchorPoint('profile')"/>
       </div>
-    </div>
-    <div class="portfolio fadein" ref="portfolio">
+    </section>
+    <section class="portfolio sec-fadein" ref="portfolio">
       <heading heading="PORTFOLIO"/>
       <div class="portfolio-container">
         <portfolio-item
@@ -55,8 +62,8 @@
           "
         />
       </div>
-    </div>
-    <div class="skills fadein" ref="skills">
+    </section>
+    <section class="skills sec-fadein" ref="skills">
       <heading heading="SKILLS"/>
       <div class="skills-container">
         <skills-item
@@ -87,8 +94,8 @@
           "
         />
       </div>
-    </div>
-    <div class="stances fadein" ref="stances">
+    </section>
+    <section class="stances sec-fadein" ref="stances">
       <heading heading="STANCES"/>
       <div class="stances-title">世の中を効率的に、かつ おもしろく</div>
       <div class="stances-container">
@@ -121,8 +128,8 @@
           </div>
         </div>
       </div>
-    </div>   
-    <div class="profile fadein" ref="profile">
+    </section>   
+    <section class="profile sec-fadein" ref="profile">
       <heading heading="PROFILE"/>
       <div class="profile-container">
         <div class="profile-image-item">
@@ -146,11 +153,12 @@
           <a href="https://qiita.com/t-kawamura1" class="qiita"><img src="../assets/qiita.png" alt="Qiitaロゴ" class="qiita-logo"></a>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
 <script>
+import ToTopButton from '@/components/shared/ToTopButton'
 import Logo from '@/components/shared/Logo'
 import NavListItem from '@/components/shared/NavListItem'
 import Heading from '@/components/shared/Heading'
@@ -163,14 +171,16 @@ export default {
   components: {
     Logo,
     NavListItem,
+    ToTopButton,
     Heading,
     ButtonDark,
     PortfolioItem,
     SkillsItem,
-    StancesItem,
+    StancesItem
   },
   data() {
     return {
+      show: false,
       portfolioImgSrc: [
         require('@/assets/site-img-ex1.jpg'),
         require('@/assets/site-img-ex2.jpg')
@@ -183,11 +193,14 @@ export default {
     }
   },
   created() {
-    window.addEventListener('scroll', this.showComponent);
+    window.addEventListener('scroll', this.showSection);
+    window.addEventListener('scroll', () => {
+      this.show = (window.scrollY > 500);
+    });
   },
   methods: {
-    showComponent() {
-      var element = document.getElementsByClassName('fadein');
+    showSection() {
+      var element = document.getElementsByClassName('sec-fadein');
       if (!element) return;
       var showTiming = window.innerHeight > 950 ? 200 : 80;
       var scrollY = window.pageYOffset;
@@ -213,7 +226,13 @@ export default {
   background: rgba(255, 255, 255, 0.7) url('../assets/home-bg.jpg') no-repeat fixed left bottom;
   background-size: cover;
   background-blend-mode: lighten;
-  .fadein {
+  .button-fade-enter-active, .button-fade-leave-active {
+    transition: opacity 0.5s;
+  }
+  .button-fade-leave-to {
+    opacity: 0;
+  }
+  .sec-fadein {
     opacity: 0;
     transform: translateY(50px);
     transition: all 1.0s;
@@ -242,6 +261,13 @@ export default {
         padding: 0;
       }
     }
+  }
+
+  .to-top-button {
+    position: fixed;
+    z-index: 9;
+    bottom: 10px;
+    right: 10px;
   }
 
   .hero {
