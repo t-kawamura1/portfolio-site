@@ -1,5 +1,28 @@
 <template>
   <div class="home">
+    <header class="home-header">
+      <logo/>
+      <nav class="nav">
+        <ul class="nav-list">
+          <nav-list-item
+            nav-list-item-name="PORTFOLIO"
+            @click-to="scrollToAnchorPoint('portfolio')"
+          />
+          <nav-list-item
+            nav-list-item-name="SKILLS"
+            @click-to="scrollToAnchorPoint('skills')"
+          />
+          <nav-list-item
+            nav-list-item-name="STANCES"
+            @click-to="scrollToAnchorPoint('stances')"
+          />
+          <nav-list-item
+            nav-list-item-name="PROFILE"
+            @click-to="scrollToAnchorPoint('profile')"
+          />
+        </ul>
+      </nav>
+    </header>
     <div class="hero">
       <h1 class="title">T.KAWAMURA</h1>
       <p class="sub-title">Make the world efficient and fun.</p>
@@ -33,7 +56,7 @@
         />
       </div>
     </div>
-    <div class="skills fadein">
+    <div class="skills fadein" ref="skills">
       <heading heading="SKILLS"/>
       <div class="skills-container">
         <skills-item
@@ -65,7 +88,7 @@
         />
       </div>
     </div>
-    <div class="stances fadein">
+    <div class="stances fadein" ref="stances">
       <heading heading="STANCES"/>
       <div class="stances-title">世の中を効率的に、かつ おもしろく</div>
       <div class="stances-container">
@@ -128,6 +151,8 @@
 </template>
 
 <script>
+import Logo from '@/components/shared/Logo'
+import NavListItem from '@/components/shared/NavListItem'
 import Heading from '@/components/shared/Heading'
 import ButtonDark from '@/components/shared/ButtonDark'
 import PortfolioItem from '@/components/shared/PortfolioItem'
@@ -136,6 +161,8 @@ import StancesItem from '@/components/shared/StancesItem'
 
 export default {
   components: {
+    Logo,
+    NavListItem,
     Heading,
     ButtonDark,
     PortfolioItem,
@@ -193,6 +220,27 @@ export default {
     &.scrollin {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  .home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #636363;
+    padding: 0 30px;
+    position: fixed;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    height: 50px;
+    .nav {
+      width: 500px;
+      .nav-list {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+      }
     }
   }
 
@@ -356,6 +404,22 @@ export default {
 @media (max-width: 768px) {
   .home {
     background: none;
+    *:hover {
+      opacity: 1;
+    }
+
+    .home-header {
+      justify-content: space-between;
+      padding: 0 0 0 10px;
+      height: 40px;
+      .nav {
+        width: 270px;
+        height: 40px;
+        .nav-list {
+          padding: 0;
+        }
+      }
+    }
 
     .hero {
       background: none;

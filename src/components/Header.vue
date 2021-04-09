@@ -2,8 +2,11 @@
   <header class="header">
     <h1 class="logo"><router-link to="/">T.K</router-link></h1>
     <nav class="nav">
-      <ul class="nav-ul">
-        <nav-list-item :navListItems="navListItems"/>
+      <ul class="nav-list">
+        <nav-list-item :nav-list-item-name="navListItems[0]" @mediate-click-to="clickTo"/>
+        <nav-list-item :nav-list-item-name="navListItems[1]"/>
+        <nav-list-item :nav-list-item-name="navListItems[2]"/>
+        <nav-list-item :nav-list-item-name="navListItems[3]"/>
       </ul>
     </nav>
   </header>
@@ -24,6 +27,11 @@ export default {
         'STANCES',
         'PROFILE'
       ]
+    }
+  },
+  methods: {
+    clickTo() {
+      this.$emit('click-to');
     }
   }
 }
@@ -53,7 +61,9 @@ export default {
   }
   .nav {
     width: 500px;
-    .nav-ul {
+    .nav-list {
+      display: flex;
+      justify-content: space-between;
       padding: 0;
     }
   }
@@ -76,7 +86,7 @@ export default {
     }
     .nav {
       width: 270px;
-      .nav-ul {
+      .nav-list {
         padding: 0;
       }
     }
