@@ -4,11 +4,11 @@
       <h1 class="title">T.KAWAMURA</h1>
       <p class="sub-title">Make the world efficient and fun.</p>
       <div class="hero-buttons-box">
-        <button-dark button-text="Portfolio"/>
-        <button-dark button-text="About me"/>
+        <button-dark button-text="Portfolio" @scroll-to="scrollToAnchorPoint('portfolio')"/>
+        <button-dark button-text="About me" @scroll-to="scrollToAnchorPoint('profile')"/>
       </div>
     </div>
-    <div class="portfolio fadein">
+    <div class="portfolio fadein" ref="portfolio">
       <heading heading="PORTFOLIO"/>
       <div class="portfolio-container">
         <portfolio-item
@@ -99,7 +99,7 @@
         </div>
       </div>
     </div>   
-    <div class="profile fadein">
+    <div class="profile fadein" ref="profile">
       <heading heading="PROFILE"/>
       <div class="profile-container">
         <div class="profile-image-item">
@@ -172,6 +172,10 @@ export default {
           element[i].classList.add('scrollin');
         }
       }
+    },
+    scrollToAnchorPoint(refName) {
+      const el = this.$refs[refName];
+      el.scrollIntoView({ behavior: 'smooth'});
     }
   }
 }

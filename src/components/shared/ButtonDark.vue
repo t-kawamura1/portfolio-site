@@ -1,5 +1,5 @@
 <template>
-  <div class="button-dark">{{ buttonText }}</div>
+  <div class="button-dark" @click="clickToScroll">{{ buttonText }}</div>
 </template>
 
 <script>
@@ -7,6 +7,11 @@ export default {
   props: {
     buttonText: String
   },
+  methods: {
+    clickToScroll() {
+      this.$emit('scroll-to')
+    }
+  }
 }
 </script>
 
@@ -23,6 +28,7 @@ export default {
   &:hover {
     background-color: #555;
     transition: 0.2s;
+    cursor: pointer;
   }
 }
 
