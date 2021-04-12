@@ -1,14 +1,44 @@
 <template>
-  <div class="home">
-    <div class="hero">
+  <div class="home" ref="home">
+    <header class="home-header">
+      <logo @click-to="scrollToAnchorPoint('home')"/>
+      <nav class="nav">
+        <ul class="nav-list">
+          <nav-list-item
+            nav-list-item-name="PORTFOLIO"
+            @click-to="scrollToAnchorPoint('portfolio')"
+          />
+          <nav-list-item
+            nav-list-item-name="SKILLS"
+            @click-to="scrollToAnchorPoint('skills')"
+          />
+          <nav-list-item
+            nav-list-item-name="STANCES"
+            @click-to="scrollToAnchorPoint('stances')"
+          />
+          <nav-list-item
+            nav-list-item-name="PROFILE"
+            @click-to="scrollToAnchorPoint('profile')"
+          />
+        </ul>
+      </nav>
+    </header>
+    <transition name="button-fade">
+      <to-top-button
+        v-if="show"
+        @click-to="scrollToAnchorPoint('home')"
+        class="to-top-button"
+      />
+    </transition>
+    <section class="hero">
       <h1 class="title">T.KAWAMURA</h1>
       <p class="sub-title">Make the world efficient and fun.</p>
       <div class="hero-buttons-box">
-        <button-dark button-text="Portfolio"/>
-        <button-dark button-text="About me"/>
+        <button-dark button-text="Portfolio" @scroll-to="scrollToAnchorPoint('portfolio')"/>
+        <button-dark button-text="About me" @scroll-to="scrollToAnchorPoint('profile')"/>
       </div>
-    </div>
-    <div class="portfolio fadein">
+    </section>
+    <section class="portfolio sec-fadein" ref="portfolio">
       <heading heading="PORTFOLIO"/>
       <div class="portfolio-container">
         <portfolio-item
@@ -32,8 +62,8 @@
           "
         />
       </div>
-    </div>
-    <div class="skills fadein">
+    </section>
+    <section class="skills sec-fadein" ref="skills">
       <heading heading="SKILLS"/>
       <div class="skills-container">
         <skills-item
@@ -64,8 +94,8 @@
           "
         />
       </div>
-    </div>
-    <div class="stances fadein">
+    </section>
+    <section class="stances sec-fadein" ref="stances">
       <heading heading="STANCES"/>
       <div class="stances-title">世の中を効率的に、かつ おもしろく</div>
       <div class="stances-container">
@@ -85,25 +115,14 @@
             どのような需要や要望にも応える技術力を身につけていきます。
           "
         />
-        <div class="stances-figure-item">
-          <div class="stance-figure">
-            効率 楽 人 未来 幸福
-          </div>
-          <div class="keyword-box">
-            <div class="keyword-choice">幸福</div>
-            <p class="keyword-text">
-              私もすべて現にとんだ創作国というものの一方にしならなけれ。
-              まあ今日に学習らはついにこうしたらくたたかもから講じと得ますには経験しないうて。
-            </p>
-          </div>
-        </div>
+        <stances-figure-item/>
       </div>
-    </div>   
-    <div class="profile fadein">
+    </section>   
+    <section class="profile sec-fadein" ref="profile">
       <heading heading="PROFILE"/>
       <div class="profile-container">
         <div class="profile-image-item">
-          <img src="../assets/my-image.jpg" alt="作成者のイメージ" class="my-image"> 
+          <img src="@/assets/my-image.jpg" alt="作成者のイメージ" class="my-image"> 
         </div>
         <div class="profile-item">
           <div class="my-name">河村 智之</div>
@@ -123,27 +142,36 @@
           <a href="https://qiita.com/t-kawamura1" class="qiita"><img src="../assets/qiita.png" alt="Qiitaロゴ" class="qiita-logo"></a>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
 <script>
+import ToTopButton from '@/components/shared/ToTopButton'
+import Logo from '@/components/shared/Logo'
+import NavListItem from '@/components/shared/NavListItem'
 import Heading from '@/components/shared/Heading'
 import ButtonDark from '@/components/shared/ButtonDark'
 import PortfolioItem from '@/components/shared/PortfolioItem'
 import SkillsItem from '@/components/shared/SkillsItem'
 import StancesItem from '@/components/shared/StancesItem'
+import StancesFigureItem from '@/components/shared/StancesFigureItem'
 
 export default {
   components: {
+    Logo,
+    NavListItem,
+    ToTopButton,
     Heading,
     ButtonDark,
     PortfolioItem,
     SkillsItem,
     StancesItem,
+    StancesFigureItem
   },
   data() {
     return {
+      show: false,
       portfolioImgSrc: [
         require('@/assets/site-img-ex1.jpg'),
         require('@/assets/site-img-ex2.jpg')
@@ -156,24 +184,29 @@ export default {
     }
   },
   created() {
-    window.addEventListener('scroll', this.showComponent);
+    window.addEventListener('scroll', this.showSection);
+    window.addEventListener('scroll', () => {
+      this.show = (window.scrollY > 500);
+    });
   },
   methods: {
-    showComponent() {
-      var element = document.getElementsByClassName('fadein');
+    showSection() {
+      var element = document.getElementsByClassName('sec-fadein');
       if (!element) return;
-
       var showTiming = window.innerHeight > 950 ? 200 : 80;
       var scrollY = window.pageYOffset;
       var windowH = window.innerHeight;
-
       for (var i = 0; i < element.length; i++) {
         var elementClientRect = element[i].getBoundingClientRect();
         var elementY = scrollY + elementClientRect.top;
-        if (scrollY + windowH -showTiming > elementY) {
+        if (scrollY + windowH - showTiming > elementY) {
           element[i].classList.add('scrollin');
         }
       }
+    },
+    scrollToAnchorPoint(refName) {
+      const el = this.$refs[refName];
+      el.scrollIntoView({ behavior: 'smooth'});
     }
   }
 }
@@ -184,7 +217,13 @@ export default {
   background: rgba(255, 255, 255, 0.7) url('../assets/home-bg.jpg') no-repeat fixed left bottom;
   background-size: cover;
   background-blend-mode: lighten;
-  .fadein {
+  .button-fade-enter-active, .button-fade-leave-active {
+    transition: opacity 0.5s;
+  }
+  .button-fade-leave-to {
+    opacity: 0;
+  }
+  .sec-fadein {
     opacity: 0;
     transform: translateY(50px);
     transition: all 1.0s;
@@ -192,6 +231,34 @@ export default {
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  .home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #636363;
+    padding: 0 30px;
+    position: fixed;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    height: 50px;
+    .nav {
+      width: 500px;
+      .nav-list {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+      }
+    }
+  }
+
+  .to-top-button {
+    position: fixed;
+    z-index: 9;
+    bottom: 10px;
+    right: 10px;
   }
 
   .hero {
@@ -254,32 +321,6 @@ export default {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
-      .stances-figure-item {
-        width: 100%;
-        .stance-figure {
-          width: 100%;
-          margin-bottom: 60px;
-          font-size: 2.5rem;
-        }
-        .keyword-box {
-          margin: 0 auto;
-          width: 60%;
-          .keyword-choice {
-            display: inline-block;
-            vertical-align: middle;
-            width: 30%;
-            height: 100%;
-            font-size: 2.5rem;
-          }
-          .keyword-text {
-            display: inline-block;
-            vertical-align: middle;
-            line-height: 2;
-            width: 70%;
-            height: 100%;
-          }
-        }
-      }
     }
   }
 
@@ -354,6 +395,22 @@ export default {
 @media (max-width: 768px) {
   .home {
     background: none;
+    *:hover {
+      opacity: 1;
+    }
+
+    .home-header {
+      justify-content: space-between;
+      padding: 0 0 0 10px;
+      height: 40px;
+      .nav {
+        width: 270px;
+        height: 40px;
+        .nav-list {
+          padding: 0;
+        }
+      }
+    }
 
     .hero {
       background: none;
@@ -397,29 +454,6 @@ export default {
       }
       .stances-container {
         flex-direction: column;
-        .stance-item {
-          border-bottom: 1px solid #fff;
-          margin-bottom: 40px;
-        }
-        .stances-figure-item {
-          .stance-figure {
-            font-size: 2rem;
-            margin-bottom: 30px;
-          }
-          .keyword-box {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            .keyword-choice {
-              font-size: 2.2rem;
-              width: 100%;
-              margin-bottom: 15px;
-            }
-            .keyword-text {
-              width: 100%;
-            }
-          }
-        }
       }
     }
 

@@ -1,47 +1,39 @@
 <template>
-  <li class="nav-list">
-    <div class="nav-list-item" v-for="navListItem in navListItems" :key="navListItem">
-      <a href="#">{{ navListItem }}</a>
-    </div>
+  <li class="nav-list-item" @click="clickTo">
+    {{ navListItemName }}
   </li>
 </template>
 
 <script>
 export default {
   props: {
-    navListItems: Array
+    navListItemName: String
+  },
+  methods: {
+    clickTo() {
+      this.$emit('click-to')
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.nav-list {
-  display: flex;
-  justify-content: space-between;
-  .nav-list-item {
-    display: inline-block;
-    font-weight: 300;
-    color: #636363;
-    line-height: 40px;
-    height: 40px;
-    font-size: 2rem;
-    &:hover {
-      opacity: 0.5;
-    }
+.nav-list-item {
+  display: inline-block;
+  font-weight: 300;
+  color: #636363;
+  line-height: 40px;
+  font-size: 2rem;
+  &:hover {
+    opacity: 0.5;
+    cursor: pointer;
   }
 }
 
 @media (max-width: 768px) {
-  .nav-list {
-    justify-content: space-between;
-    .nav-list-item {
-      line-height: 13px;
-      height: 13px;
-      font-size: 1.3rem;
-      &:hover {
-        opacity: 1;
-      }
-    }
+  .nav-list-item {
+    line-height: 40px;
+    font-size: 1.3rem;
   }
 }
 </style>

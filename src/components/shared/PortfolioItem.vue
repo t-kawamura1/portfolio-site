@@ -4,7 +4,7 @@
     <div class="portfolio-title">{{ portfolioTitle }}</div>
     <a href="#" class="portfolio-link">{{ portfolioUrl }}</a>
     <p class="portfolio-text">{{ portfolioText }}</p>
-    <button-bright button-text="Read more"/>
+    <button-bright button-text="もっと詳しく" @show-more-detail="toPortfolioDetail"/>
   </div>
 </template>
 
@@ -20,6 +20,11 @@ export default {
     portfolioTitle: String,
     portfolioUrl: String,
     portfolioText: String
+  },
+  methods: {
+    toPortfolioDetail() {
+      this.$router.push('portfolio-detail')
+    }
   }
 }
 </script>

@@ -36,12 +36,12 @@ export default {
       margin-bottom: 15px;
     }
     .stance-text {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
-    &:nth-child(2) {
-      border-bottom: 1px solid #fff;
-      margin-bottom: 40px;
-    }
+    // &:nth-child(2) {
+    //   border-bottom: 1px solid #fff;
+    //   margin-bottom: 40px;
+    // }
   }
 }
 </style>

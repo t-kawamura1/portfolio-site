@@ -1,5 +1,5 @@
 <template>
-  <div class="button-bright">{{ buttonText }}</div>
+  <div class="button-bright" @click="clickToMore">{{ buttonText }}</div>
 </template>
 
 <script>
@@ -7,6 +7,11 @@ export default {
   props: {
     buttonText: String
   },
+  methods: {
+    clickToMore() {
+      this.$emit('show-more-detail')
+    }
+  }
 }
 </script>
 
@@ -34,6 +39,7 @@ export default {
     font-size: 1.7rem;
     &:hover{
       background-color: #777;
+      cursor: pointer;
     }
   }
 }

@@ -1,16 +1,26 @@
 <template>
   <div id="app">
-    <Header/>
-    <router-view/>
+    <Loading v-show="loading"/>
+    <router-view v-show="!loading"/>
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header';
+import Loading from '@/components/Loading'
 
 export default {
   components: {
-    Header
+    Loading
+  },
+  data() {
+    return {
+      loading: true
+    }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.loading = false;
+    }, 2000);
   }
 }
 </script>
