@@ -115,25 +115,14 @@
             どのような需要や要望にも応える技術力を身につけていきます。
           "
         />
-        <div class="stances-figure-item">
-          <div class="stance-figure">
-            効率 楽 人 未来 幸福
-          </div>
-          <div class="keyword-box">
-            <div class="keyword-choice">幸福</div>
-            <p class="keyword-text">
-              私もすべて現にとんだ創作国というものの一方にしならなけれ。
-              まあ今日に学習らはついにこうしたらくたたかもから講じと得ますには経験しないうて。
-            </p>
-          </div>
-        </div>
+        <stances-figure-item/>
       </div>
     </section>   
     <section class="profile sec-fadein" ref="profile">
       <heading heading="PROFILE"/>
       <div class="profile-container">
         <div class="profile-image-item">
-          <img src="../assets/my-image.jpg" alt="作成者のイメージ" class="my-image"> 
+          <img src="@/assets/my-image.jpg" alt="作成者のイメージ" class="my-image"> 
         </div>
         <div class="profile-item">
           <div class="my-name">河村 智之</div>
@@ -166,6 +155,7 @@ import ButtonDark from '@/components/shared/ButtonDark'
 import PortfolioItem from '@/components/shared/PortfolioItem'
 import SkillsItem from '@/components/shared/SkillsItem'
 import StancesItem from '@/components/shared/StancesItem'
+import StancesFigureItem from '@/components/shared/StancesFigureItem'
 
 export default {
   components: {
@@ -176,7 +166,8 @@ export default {
     ButtonDark,
     PortfolioItem,
     SkillsItem,
-    StancesItem
+    StancesItem,
+    StancesFigureItem
   },
   data() {
     return {
@@ -208,7 +199,7 @@ export default {
       for (var i = 0; i < element.length; i++) {
         var elementClientRect = element[i].getBoundingClientRect();
         var elementY = scrollY + elementClientRect.top;
-        if (scrollY + windowH -showTiming > elementY) {
+        if (scrollY + windowH - showTiming > elementY) {
           element[i].classList.add('scrollin');
         }
       }
@@ -250,7 +241,7 @@ export default {
     padding: 0 30px;
     position: fixed;
     z-index: 10;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
     width: 100%;
     height: 50px;
     .nav {
@@ -330,32 +321,6 @@ export default {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
-      .stances-figure-item {
-        width: 100%;
-        .stance-figure {
-          width: 100%;
-          margin-bottom: 60px;
-          font-size: 2.5rem;
-        }
-        .keyword-box {
-          margin: 0 auto;
-          width: 60%;
-          .keyword-choice {
-            display: inline-block;
-            vertical-align: middle;
-            width: 30%;
-            height: 100%;
-            font-size: 2.5rem;
-          }
-          .keyword-text {
-            display: inline-block;
-            vertical-align: middle;
-            line-height: 2;
-            width: 70%;
-            height: 100%;
-          }
-        }
-      }
     }
   }
 
@@ -489,29 +454,6 @@ export default {
       }
       .stances-container {
         flex-direction: column;
-        .stance-item {
-          border-bottom: 1px solid #fff;
-          margin-bottom: 40px;
-        }
-        .stances-figure-item {
-          .stance-figure {
-            font-size: 2rem;
-            margin-bottom: 30px;
-          }
-          .keyword-box {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            .keyword-choice {
-              font-size: 2.2rem;
-              width: 100%;
-              margin-bottom: 15px;
-            }
-            .keyword-text {
-              width: 100%;
-            }
-          }
-        }
       }
     }
 
