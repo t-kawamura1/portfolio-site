@@ -46,9 +46,7 @@
           portfolio-title="MY PORTFOLIO 1"
           portfolio-url="https://hogehoge.jp"
           portfolio-text="
-            私もすべて現にとんだ創作国というものの一方にしならなけれ。
-            まあ今日に学習らはついにこうしたらくたたかもから講じと得ますには経験しないうて、
-            そうには見せるですででう。詞をしないのはまあ昔にもしなだた。
+            ______________________準備中_________________________
           "
         />
         <portfolio-item
@@ -56,9 +54,7 @@
           portfolio-title="MY PORTFOLIO 2"
           portfolio-url="https://hugahuga.jp"
           portfolio-text="
-            私もすべて現にとんだ創作国というものの一方にしならなけれ。
-            まあ今日に学習らはついにこうしたらくたたかもから講じと得ますには経験しないうて、
-            そうには見せるですででう。詞をしないのはまあ昔にもしなだた。
+            ______________________準備中_________________________
           "
         />
       </div>
@@ -183,12 +179,6 @@ export default {
       ]
     }
   },
-  created() {
-    window.addEventListener('scroll', this.showSection);
-    window.addEventListener('scroll', () => {
-      this.show = (window.scrollY > 500);
-    });
-  },
   methods: {
     showSection() {
       var element = document.getElementsByClassName('sec-fadein');
@@ -208,6 +198,20 @@ export default {
       const el = this.$refs[refName];
       el.scrollIntoView({ behavior: 'smooth'});
     }
+  },
+  created() {
+    window.addEventListener('scroll', this.showSection);
+    window.addEventListener('scroll', () => {
+      this.show = (window.scrollY > 500);
+    });
+  },
+  mounted(){
+    const title = "T.KAWAMURA ポートフォリオサイト"
+    const description = "Webエンジニアを目指す河村智之のポートフォリオサイトです。"
+    document.title = title
+    document.querySelector("meta[property='og:title']").setAttribute('content', title)
+    document.querySelector("meta[name='description']").setAttribute('content', description)
+    document.querySelector("meta[property='og:description']").setAttribute('content', description)
   }
 }
 </script>
