@@ -1,5 +1,5 @@
 <template>
-  <li class="nav-list-item" @click="clickTo">
+  <li class="nav-list-item" @click="clickToScroll">
     {{ navListItemName }}
   </li>
 </template>
@@ -10,8 +10,8 @@ export default {
     navListItemName: String
   },
   methods: {
-    clickTo() {
-      this.$emit('click-to')
+    clickToScroll() {
+      this.$emit('scrollTo')
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="to-top-button" @click="clickTo">
+  <div class="to-top-button" @click="clickToScroll">
     <span class="arrow"></span>
     <span class="top">TOP</span>
   </div>
@@ -8,8 +8,8 @@
 <script>
 export default {
   methods: {
-    clickTo() {
-      this.$emit('click-to');
+    clickToScroll() {
+      this.$emit('scrollTo');
     }
   }
 }

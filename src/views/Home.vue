@@ -1,24 +1,24 @@
 <template>
   <div class="home" ref="home">
     <header class="home-header">
-      <logo @click-to="scrollToAnchorPoint('home')"/>
+      <logo/>
       <nav class="nav">
         <ul class="nav-list">
           <nav-list-item
             nav-list-item-name="PORTFOLIO"
-            @click-to="scrollToAnchorPoint('portfolio')"
+            @scrollTo="scrollToAnchorPoint('portfolio')"
           />
           <nav-list-item
             nav-list-item-name="SKILLS"
-            @click-to="scrollToAnchorPoint('skills')"
+            @scrollTo="scrollToAnchorPoint('skills')"
           />
           <nav-list-item
             nav-list-item-name="STANCES"
-            @click-to="scrollToAnchorPoint('stances')"
+            @scrollTo="scrollToAnchorPoint('stances')"
           />
           <nav-list-item
             nav-list-item-name="PROFILE"
-            @click-to="scrollToAnchorPoint('profile')"
+            @scrollTo="scrollToAnchorPoint('profile')"
           />
         </ul>
       </nav>
@@ -26,7 +26,7 @@
     <transition name="button-fade">
       <to-top-button
         v-if="show"
-        @click-to="scrollToAnchorPoint('home')"
+        @scrollTo="scrollToAnchorPoint('home')"
         class="to-top-button"
       />
     </transition>
@@ -34,8 +34,8 @@
       <h1 class="title">T.KAWAMURA</h1>
       <p class="sub-title">Make the world efficient and fun.</p>
       <div class="hero-buttons-box">
-        <button-dark button-text="Portfolio" @scroll-to="scrollToAnchorPoint('portfolio')"/>
-        <button-dark button-text="About me" @scroll-to="scrollToAnchorPoint('profile')"/>
+        <button-dark button-text="Portfolio" @scrollTo="scrollToAnchorPoint('portfolio')"/>
+        <button-dark button-text="About me" @scrollTo="scrollToAnchorPoint('profile')"/>
       </div>
     </section>
     <section class="portfolio sec-fadein" ref="portfolio">
@@ -117,7 +117,7 @@
         />
         <stances-figure-item/>
       </div>
-    </section>   
+    </section>
     <section class="profile sec-fadein" ref="profile">
       <heading heading="PROFILE"/>
       <div class="profile-container">
@@ -151,11 +151,11 @@ import ToTopButton from '@/components/shared/ToTopButton'
 import Logo from '@/components/shared/Logo'
 import NavListItem from '@/components/shared/NavListItem'
 import Heading from '@/components/shared/Heading'
-import ButtonDark from '@/components/shared/ButtonDark'
-import PortfolioItem from '@/components/shared/PortfolioItem'
-import SkillsItem from '@/components/shared/SkillsItem'
-import StancesItem from '@/components/shared/StancesItem'
-import StancesFigureItem from '@/components/shared/StancesFigureItem'
+import ButtonDark from '@/components/home-view/ButtonDark'
+import PortfolioItem from '@/components/home-view/PortfolioItem'
+import SkillsItem from '@/components/home-view/SkillsItem'
+import StancesItem from '@/components/home-view/StancesItem'
+import StancesFigureItem from '@/components/home-view/StancesFigureItem'
 
 export default {
   components: {
