@@ -4,12 +4,12 @@
     <div class="portfolio-title">{{ portfolioTitle }}</div>
     <a href="#" class="portfolio-link">{{ portfolioUrl }}</a>
     <p class="portfolio-text">{{ portfolioText }}</p>
-    <button-bright button-text="もっと詳しく" @show-more-detail="toPortfolioDetail"/>
+    <button-bright button-text="もっと詳しく" @showMoreDetail="toPortfolioDetail"/>
   </div>
 </template>
 
 <script>
-import ButtonBright from '@/components/shared/ButtonBright'
+import ButtonBright from '@/components/home-view/ButtonBright'
 
 export default {
   components:{

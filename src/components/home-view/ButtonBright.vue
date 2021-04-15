@@ -9,7 +9,7 @@ export default {
   },
   methods: {
     clickToMore() {
-      this.$emit('show-more-detail')
+      this.$emit('showMoreDetail')
     }
   }
 }

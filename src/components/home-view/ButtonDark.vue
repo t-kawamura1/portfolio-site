@@ -9,7 +9,7 @@ export default {
   },
   methods: {
     clickToScroll() {
-      this.$emit('scroll-to')
+      this.$emit('scrollTo')
     }
   }
 }
@@ -34,8 +34,6 @@ export default {
 
 @media (max-width: 768px) {
   .button-dark {
-    // width: 150px;
-    // padding: 10px;
     font-size: 1.7rem;
     &:hover {
       background-color: #777;
