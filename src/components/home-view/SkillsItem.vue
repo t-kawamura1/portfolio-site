@@ -50,11 +50,16 @@ export default {
       border-bottom: none;
     }
     .skill-title {
-      font-size: 2.2rem;
+      font-size: 2.0rem;
       margin: 10px 0 20px;
     }
     .skill-image {
       margin-bottom: 20px;
+      width: 40%;
+      height: 40%;
+    }
+    .skill-text {
+      font-size: 1.4rem;
     }
   }
 }

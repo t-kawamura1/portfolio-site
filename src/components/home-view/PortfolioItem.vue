@@ -33,8 +33,10 @@ export default {
 .portfolio-item {
   width: 45%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   .site-image {
-  display: block;
   margin-bottom: 50px;
   width: 100%;
   }
@@ -44,7 +46,6 @@ export default {
     letter-spacing: 1px;
   }
   .portfolio-link {
-    display: inline-block;
     margin-bottom: 30px;
     color: #fff;
     font-weight: 300;
@@ -53,13 +54,12 @@ export default {
     }
   }
   .portfolio-text {
-    display: inline-block;
     margin-bottom: 30px;
     line-height: 2;
+    text-align: left;
   }
-  &::before {
+  &:first-child::before {
     content: '';
-    display: block;
     position: absolute;
     top: 0;
     left: 0;
@@ -67,9 +67,8 @@ export default {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
   }
-  &::after {
+  &:first-child:after {
     content: 'COMING SOON';
-    display: inline-block;
     position: absolute;
     width: 100%;
     color: #fff;
@@ -94,16 +93,22 @@ export default {
       margin-bottom: 30px;
     }
     .portfolio-title {
-      font-size: 2.2rem;
+      font-size: 1.8rem;
+    }
+    .portfolio-link {
+      font-size: 1.5rem;
     }
     .portfolio-link:hover {
         opacity: 1;
     }
-    // &::after {
-    //   font-size: 2.5rem;
-    //   top: 15%;
-    //   letter-spacing: 2px;
-    // }
+    .portfolio-text {
+      font-size: 1.4rem;
+    }
+    &:first-child::after {
+      font-size: 2.5rem;
+      top: 25%;
+      letter-spacing: 2px;
+    }
   }
 }
 </style>

@@ -37,6 +37,7 @@ export default {
     }
     .stance-text {
       margin-bottom: 50px;
+      font-size: 1.4rem;
     }
     // &:nth-child(2) {
     //   border-bottom: 1px solid #fff;
