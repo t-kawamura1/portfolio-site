@@ -43,18 +43,20 @@
       <div class="portfolio-container">
         <portfolio-item
           :portfolioImgSrc="portfolioImgSrc[0]"
-          portfolio-title="MY PORTFOLIO 1"
+          portfolio-title="MY PORTFOLIO"
           portfolio-url="https://hogehoge.jp"
           portfolio-text="
-            ______________________準備中_________________________
+            準備中
           "
         />
         <portfolio-item
           :portfolioImgSrc="portfolioImgSrc[1]"
-          portfolio-title="MY PORTFOLIO 2"
-          portfolio-url="https://hugahuga.jp"
+          portfolio-title="T.KAWAMURA ポートフォリオサイト"
+          portfolio-url="https://t-kawamura.netlify.app/"
           portfolio-text="
-            ______________________準備中_________________________
+            このサイト自身です。Vue.jsで作成しました。
+            環境の構築はDockerで行っています。
+            ※ 画像はPCサイト表示です。
           "
         />
       </div>
@@ -67,7 +69,7 @@
           :skillImgSrc="skillImgSrc[0]"
           skill-text="
             サーバーサイドの技術として、Ruby on Railsを学習中。
-            ポートフォリオでは、Rails5をAPIモードで活用。
+            ポートフォリオでは、Rails5をAPIモードで活用（予定）。
             適切なクエリ処理を心がけます。
           "
         />
@@ -76,17 +78,18 @@
           :skillImgSrc="skillImgSrc[1]"
           skill-text="
             フロントエンドの技術として、Vue.jsを学習中。
-            ポートフォリオのフロント実装に採用。当サイトはVue.jsのみで作成。
-            適切なコンポーネント設計を心がけます。今後はNuxt.jsや他フレームワークにもチャレンジしたい。
+            ポートフォリオのフロント実装に採用（予定）。
+            適切なコンポーネント設計を模索していきます。
+            今後はNuxt.jsや他フレームワークにもチャレンジしたいと考えています。
           "
         />
         <skills-item
           skill-title="INFRASTRUCTURE"
           :skillImgSrc="skillImgSrc[2]"
           skill-text="
-            環境の構築にはDockerを活用。
-            本番環境はAWSの各種サービスを活用。
-            必要に応じてモダンな開発環境に適応していきます。
+            環境の構築にはDockerを活用（予定）。
+            本番環境にはAWSの各種サービスを活用（予定）。
+            必要に応じてモダンな開発環境に適応し、適切なインフラを選択していきます。
           "
         />
       </div>
@@ -123,10 +126,10 @@
         <div class="profile-item">
           <div class="my-name">河村 智之</div>
           <p class="profile-text">
-            2021年、現在転職活動中の29歳。
+            2021年現在、転職に向けて活動中の29歳。
             京都府出身。
             趣味はJリーグ観戦、ガンバ大阪サポーター。
-            2021年3月、思うところあって5年勤めた京都市役所を退職。
+            2021年3月、思うところあって5年間の公務員生活にピリオドを打つ。
             世の中をもっと効率的に、かつおもしろいものにするために、Webエンジニアを志す。
           </p>
         </div>
@@ -169,8 +172,8 @@ export default {
     return {
       show: false,
       portfolioImgSrc: [
-        require('@/assets/site-img-ex1.jpg'),
-        require('@/assets/site-img-ex2.jpg')
+        require('@/assets/portfolio-sample.jpg'),
+        require('@/assets/pfsite-top.png')
       ],
       skillImgSrc: [
         require('@/assets/rails.svg'),
@@ -476,8 +479,11 @@ export default {
           text-align: center;
           margin-bottom: 20px;
           .my-name {
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 15px;
+          }
+          .profile-text{
+            font-size: 1.4rem;
           }
         }
         .external-link-item {

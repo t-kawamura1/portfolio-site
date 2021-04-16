@@ -29,7 +29,7 @@ export default {
 @media (max-width: 768px) {
   .heading {
     margin-bottom: 40px;
-    font-size: 3rem;
+    font-size: 2.6rem;
     font-weight: 300;
     &::before, &::after {
       width: 30px;
