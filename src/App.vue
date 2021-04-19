@@ -17,25 +17,10 @@ export default {
       loading: true
     }
   },
-  methods: {
-    createPageTitle(to) {
-      const setTitle = 'T.KAWAMURA' + to.mata.title;
-      document.title = setTitle
-      const setDescription = to.meta.description
-      document.querySelector("meta[name='description']").setAttribute('content', setDescription)
-    }
-  },
   mounted() {
     setTimeout(() => {
       this.loading = false;
     }, 1000);
-    const to = this.$route;
-    this.createPageTitle(to);
-  },
-  watch: {
-    '$route'(to) {
-      this.createPageTitle(to);
-    }
   }
 }
 </script>

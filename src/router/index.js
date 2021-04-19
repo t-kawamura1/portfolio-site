@@ -9,27 +9,26 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
-    meta: {
-      title: '',
-      description: 'Webエンジニアを目指す河村智之のポートフォリオサイトです。'
-    }
+    component: Home
   },
   {
     path: '/portfolio-detail',
     name: 'PortfolioDetail',
-    component: PortfolioDetail,
-    meta: {
-      title: ' - ポートフォリオ詳細',
-      description: 'Webエンジニアを目指す河村智之のポートフォリオサイトです。ここでは私が実際に製作したポートフォリオを紹介します。'
-    }
+    component: PortfolioDetail
   }
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 })
 
 export default router
