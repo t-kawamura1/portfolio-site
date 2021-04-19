@@ -1,6 +1,7 @@
 # T.KAWAMURA PORTFOLIO SITE
 Thanks for visiting!  
-This is my site to introduce me and my works.
+This is my site to introduce me and my works.  
+→ [T.KAWAMURA ポートフォリオサイト](https://t-kawamura.netlify.app)
 
 ## Usage
 1. You need to install Docker to run this repository.  
