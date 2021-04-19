@@ -290,6 +290,9 @@ export default {
             padding: 0 5px;
             > a {
               color: #fff;
+              &:hover {
+                opacity: 0.7;
+              }
             }
           }
         }
@@ -367,6 +370,13 @@ export default {
         }
         .portfolio2-text-item {
           margin-left: 0;
+          .portfolio2-table {
+            th, td {
+              > a:hover {
+                  opacity: 1;
+              }
+            }
+          }
         }
       }
     }
