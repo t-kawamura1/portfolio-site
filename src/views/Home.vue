@@ -146,9 +146,9 @@
 </template>
 
 <script>
-import ToTopButton from '@/components/shared/ToTopButton'
 import Logo from '@/components/shared/Logo'
 import NavListItem from '@/components/shared/NavListItem'
+import ToTopButton from '@/components/shared/ToTopButton'
 import Heading from '@/components/shared/Heading'
 import ButtonDark from '@/components/home-view/ButtonDark'
 import PortfolioItem from '@/components/home-view/PortfolioItem'
@@ -212,9 +212,9 @@ export default {
     const title = "T.KAWAMURA ポートフォリオサイト"
     const description = "Webエンジニアを目指す河村智之のポートフォリオサイトです。"
     document.title = title
-    document.querySelector("meta[property='og:title']").setAttribute('content', title)
-    document.querySelector("meta[name='description']").setAttribute('content', description)
-    document.querySelector("meta[property='og:description']").setAttribute('content', description)
+    document.head.querySelector('[property="og:title"]').setAttribute('content', title)
+    document.head.querySelector('[name="description"]').setAttribute('content', description)
+    document.head.querySelector('[property="og:description"]').setAttribute('content', description)
   }
 }
 </script>

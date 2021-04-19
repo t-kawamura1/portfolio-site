@@ -2,7 +2,7 @@
   <div class="portfolio-item">
     <img :src="portfolioImgSrc" alt="サイトスクリーンショット" class="site-image">
     <div class="portfolio-title">{{ portfolioTitle }}</div>
-    <a href="#" class="portfolio-link">{{ portfolioUrl }}</a>
+    <a href="https://t-kawamura.netlify.app" class="portfolio-link">{{ portfolioUrl }}</a>
     <p class="portfolio-text">{{ portfolioText }}</p>
     <button-bright button-text="もっと詳しく" @showMoreDetail="toPortfolioDetail"/>
   </div>
