@@ -1,24 +1,42 @@
-# pfsite
+# T.KAWAMURA PORTFOLIO SITE
+Thanks for visiting!  
+This is my site to introduce me and my works.
 
-## Project setup
-```
-npm install
-```
+## Usage
+1. You need to install Docker to run this repository.  
+→ [Docker Desktop](https://www.docker.com/products/docker-desktop)
 
-### Compiles and hot-reloads for development
+2. Clone this repository.
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+$ git clone https://github.com/t-kawamura1/portfolio-site.git
 ```
 
-### Lints and fixes files
+3. Move to this repository directory.
 ```
-npm run lint
+$ cd portfolio-site
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+4. Start this container.
+```
+$ docker-compose up -d
+```
+
+5. If you want to work inside a container,
+```
+$ docker-compose exec pfsite sh
+```
+
+6. If you want to start a local server in this container,
+```
+$ npm run serve
+```
+
+## Features to implement down the road
+- [ ] E2E tests  
+- [ ] Update "MY PORTFOLIO"  
+
+## Author
+Tomoyuki Kawamura  
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
