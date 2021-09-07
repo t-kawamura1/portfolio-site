@@ -43,10 +43,13 @@
       <div class="portfolio-container">
         <portfolio-item
           :portfolioImgSrc="portfolioImgSrc[0]"
-          portfolio-title="MY PORTFOLIO"
-          portfolio-url="https://hogehoge.jp"
+          portfolio-title="Lemon Sour DB"
+          portfolio-url="https://lemonsourdb.net"
           portfolio-text="
-            準備中
+            おうち時間の飲み過ぎ防止に！飲んだレモンサワー（もしくは任意の度数）のアルコール量を計算できるアプリです。
+            日毎の記録をカレンダーから確認することもできます。
+            日々進化し、リリースされるレモンサワー。「あれって何だっけ？」となったときのために、データベース化してみました。
+            今後も少しずつ機能を拡張予定！
           "
         />
         <portfolio-item
@@ -55,8 +58,9 @@
           portfolio-url="https://t-kawamura.netlify.app/"
           portfolio-text="
             このサイト自身です。Vue.jsで作成しました。
-            環境の構築はDockerで行っています。
-            ※ 画像はPCサイト表示です。
+            本人全然そんな人ではないのに、少し気取って作ってみました。
+            本当はもっと気取りたいけど、デザイン力が足りてない。
+            トップの背景は東尋坊です。これから人生の荒波を乗り越えていく覚悟と所存です。
           "
         />
       </div>
@@ -68,28 +72,30 @@
           skill-title="SERVER-SIDE"
           :skillImgSrc="skillImgSrc[0]"
           skill-text="
-            サーバーサイドの技術として、Ruby on Railsを学習中。
-            ポートフォリオでは、Rails5をAPIモードで活用（予定）。
-            適切なクエリ処理を心がけます。
+            サーバーサイドの技術として、Ruby on Railsを学んでいます。
+            Lemon Sour DB（以下、LSDB）では、Rails6をAPIサーバーとして活用しました。
+            適切なクエリ処理を心がけます。フロントと比べ、テストがサクサク動作するので好きです。
+            MVC全部盛りも、API限定の活用も、両方に対応できます。
           "
         />
         <skills-item
           skill-title="FRONT-END"
           :skillImgSrc="skillImgSrc[1]"
           skill-text="
-            フロントエンドの技術として、Vue.jsを学習中。
-            ポートフォリオのフロント実装に採用（予定）。
-            適切なコンポーネント設計を模索していきます。
-            今後はNuxt.jsや他フレームワークにもチャレンジしたいと考えています。
+            フロントエンドの技術として、Vue.jsを学んでいます。
+            LSDBのフロントとして、またこのサイト自身もVue.jsを活用しています。
+            SPAはサクサク動作するので気持ちがいいですね。ただテストの重さだけはなんとかならないかな…。
+            今後はNuxt.jsやReact、TypeScriptにもチャレンジしたいと考えています。
           "
         />
         <skills-item
           skill-title="INFRASTRUCTURE"
           :skillImgSrc="skillImgSrc[2]"
           skill-text="
-            環境の構築にはDockerを活用（予定）。
-            本番環境にはAWSの各種サービスを活用（予定）。
-            必要に応じてモダンな開発環境に適応し、適切なインフラを選択していきます。
+            LSDB・当サイトともに、環境の構築にはDockerを用いています。
+            Linux自体の理解がまだまだ不足しているので、もっと仲良くなりたいです。
+            LSDBの本番環境では、AWSのECS/FARGATEを用いてデプロイしています。
+            必要に応じて適切な環境を選択できるよう、各種技術に精通していきたいと考えています。
           "
         />
       </div>
@@ -121,15 +127,15 @@
       <heading heading="PROFILE"/>
       <div class="profile-container">
         <div class="profile-image-item">
-          <img src="@/assets/my-image.jpg" alt="作成者のイメージ" class="my-image"> 
+          <img src="@/assets/my-image.jpg" alt="作成者のイメージ" class="my-image">
         </div>
         <div class="profile-item">
           <div class="my-name">河村 智之</div>
           <p class="profile-text">
-            2021年現在、転職に向けて活動中の29歳。
+            2021年現在、転職に向けて活動中の30歳。
             京都府出身。
             趣味はJリーグ観戦、ガンバ大阪サポーター。
-            2021年3月、思うところあって5年間の公務員生活にピリオドを打つ。
+            2021年3月、思うところたくさんあって5年間の公務員生活にピリオドを打つ。
             世の中をもっと効率的に、かつおもしろいものにするために、Webエンジニアを志す。
           </p>
         </div>
@@ -172,8 +178,8 @@ export default {
     return {
       show: false,
       portfolioImgSrc: [
-        require('@/assets/portfolio-sample.jpg'),
-        require('@/assets/pfsite-top.png')
+        require('@/assets/lsdb-pc-top.png'),
+        require('@/assets/pfsite-pc-top.png')
       ],
       skillImgSrc: [
         require('@/assets/rails.svg'),
@@ -302,7 +308,6 @@ export default {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
-      
     }
   }
 
@@ -345,7 +350,7 @@ export default {
       .profile-image-item {
         width: 40%;
         flex-grow: 1;
-        position: relative; 
+        position: relative;
         .my-image {
           width: 55%;
           border-radius: 50%;

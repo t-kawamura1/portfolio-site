@@ -58,25 +58,6 @@ export default {
     line-height: 2;
     text-align: left;
   }
-  &:first-child::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  &:first-child:after {
-    content: 'COMING SOON';
-    position: absolute;
-    width: 100%;
-    color: #fff;
-    font-size: 3rem;
-    top: 20%;
-    left: 0;
-    letter-spacing: 3px;
-  }
 }
 
 @media (max-width: 768px) {

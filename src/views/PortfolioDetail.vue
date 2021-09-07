@@ -379,7 +379,7 @@ export default {
       font-size: 3rem;
       color: #636363;
       letter-spacing: 2px;
-      margin-bottom: 90px;
+      margin-bottom: 60px;
     }
     .pf1-container {
       display: flex;
