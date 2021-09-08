@@ -13,15 +13,15 @@ export default {
 <style lang="scss" scoped>
 .heading {
   margin-bottom: 60px;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 400;
   letter-spacing: 1px;
   &::before, &::after {
     content: '';
     display: inline-block;
-    width: 45px;
+    width: 30px;
     height: 3px;
-    margin: 0 15px;
+    margin: 0 10px;
     border-bottom: solid 3px;
   }
 }

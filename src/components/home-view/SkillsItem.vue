@@ -21,7 +21,7 @@ export default {
   padding-top: 20px;
   width: 30%;
   .skill-title {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     margin-bottom: 30px;
     letter-spacing: 1px;
   }

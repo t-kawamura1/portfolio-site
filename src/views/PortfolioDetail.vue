@@ -145,10 +145,18 @@
             <td>
               <a href="https://github.com/t-kawamura1/lemon-sour-db-front">
                 https://github.com/t-kawamura1/lemon-sour-db-front
+                <font-awesome-icon
+                  class="pf1-table-link-icon"
+                  icon="external-link-alt"
+                ></font-awesome-icon>
               </a>
               <br>
               <a href="https://github.com/t-kawamura1/lemon-sour-db-api">
                 https://github.com/t-kawamura1/lemon-sour-db-api
+                <font-awesome-icon
+                  class="pf1-table-link-icon"
+                  icon="external-link-alt"
+                ></font-awesome-icon>
               </a>
             </td>
           </tr>
@@ -163,10 +171,18 @@
             <td>
               <a href="https://lemonsourdb.net">
                 フロント https://lemonsourdb.net
+                <font-awesome-icon
+                  class="pf1-table-link-icon"
+                  icon="external-link-alt"
+                ></font-awesome-icon>
               </a>
               <br>
               <a href="https://lsdb-back.work">
                 バック https://lsdb-back.work
+                <font-awesome-icon
+                  class="pf1-table-link-icon"
+                  icon="external-link-alt"
+                ></font-awesome-icon>
               </a>
             </td>
           </tr>
@@ -240,6 +256,10 @@
               <td>
                 <a href="https://github.com/t-kawamura1/portfolio-site">
                   https://github.com/t-kawamura1/portfolio-site
+                  <font-awesome-icon
+                    class="pf2-table-link-icon"
+                    icon="external-link-alt"
+                  ></font-awesome-icon>
                 </a>
               </td>
             </tr>
@@ -249,6 +269,10 @@
               <td>
                 <a href="https://t-kawamura.netlify.app">
                   https://t-kawamura.netlify.app
+                  <font-awesome-icon
+                    class="pf2-table-link-icon"
+                    icon="external-link-alt"
+                  ></font-awesome-icon>
                 </a>
               </td>
             </tr>
@@ -416,6 +440,9 @@ export default {
             &:hover {
               opacity: 0.7;
             }
+            .pf1-table-link-icon {
+              margin-left: 5px;
+            }
           }
         }
       }
@@ -509,6 +536,9 @@ export default {
               color: #fff;
               &:hover {
                 opacity: 0.7;
+              }
+              .pf2-table-link-icon {
+                margin-left: 5px;
               }
             }
           }

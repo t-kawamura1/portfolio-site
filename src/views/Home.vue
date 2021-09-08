@@ -34,8 +34,14 @@
       <h1 class="title">T.KAWAMURA</h1>
       <p class="sub-title">Make the world efficient and fun.</p>
       <div class="hero-buttons-box">
-        <button-dark button-text="Portfolio" @scrollTo="scrollToAnchorPoint('portfolio')"/>
-        <button-dark button-text="About me" @scrollTo="scrollToAnchorPoint('profile')"/>
+        <button-dark
+          button-text="Portfolio"
+          @scrollTo="scrollToAnchorPoint('portfolio')"
+        />
+        <button-dark
+          button-text="About me"
+          @scrollTo="scrollToAnchorPoint('profile')"
+        />
       </div>
     </section>
     <section class="portfolio sec-fadein" ref="portfolio">
@@ -58,9 +64,9 @@
           portfolio-url="https://t-kawamura.netlify.app/"
           portfolio-text="
             このサイト自身です。Vue.jsで作成しました。
-            本人全然そんな人ではないのに、少し気取って作ってみました。
-            本当はもっと気取りたいけど、デザイン力が足りてない。
-            トップの背景は東尋坊です。これから人生の荒波を乗り越えていく覚悟と所存です。
+            本人全然そんな人ではないのに、少し気取って作ってます。
+            トップの背景は自殺の名所・東尋坊です。写真の彼の表情は窺い知れません。
+            でも、その覚悟と決意は、彼の背中から伝わってくることでしょう。
           "
         />
       </div>
@@ -135,7 +141,7 @@
             2021年現在、転職に向けて活動中の30歳。
             京都府出身。
             趣味はJリーグ観戦、ガンバ大阪サポーター。
-            2021年3月、思うところたくさんあって5年間の公務員生活にピリオドを打つ。
+            2021年3月、思うところたくさんあって、5年間の公務員生活にピリオドを打つ。
             世の中をもっと効率的に、かつおもしろいものにするために、Webエンジニアを志す。
           </p>
         </div>
@@ -325,7 +331,7 @@ export default {
     background-color: #777;
     color: #fff;
     .stances-title {
-      font-size: 2.5rem;
+      font-size: 2.4rem;
       margin-bottom: 60px;
       letter-spacing: 1px;
     }
@@ -338,7 +344,7 @@ export default {
 
   .profile {
     padding: 100px 60px 100px;
-    color: #636363;
+    color: #333;
     p {
       text-align: left;
     }
@@ -438,6 +444,7 @@ export default {
       }
       .hero-buttons-box {
         flex-direction: column;
+        justify-content: space-around;
         width: 200px;
         height: 170px;
         margin-bottom: 50px;
