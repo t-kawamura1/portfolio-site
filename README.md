@@ -34,7 +34,7 @@ $ npm run serve
 
 ## Features to implement down the road
 - [ ] E2E tests
-- [ ] Update "MY PORTFOLIO"
+- [x] Update "MY PORTFOLIO"
 
 ## Author
 Tomoyuki Kawamura
