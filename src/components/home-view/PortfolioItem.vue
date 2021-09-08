@@ -2,7 +2,7 @@
   <div class="portfolio-item">
     <img :src="portfolioImgSrc" alt="サイトスクリーンショット" class="site-image">
     <div class="portfolio-title">{{ portfolioTitle }}</div>
-    <a href="https://t-kawamura.netlify.app" class="portfolio-link">
+    <a :href="portfolioUrl" class="portfolio-link">
       <font-awesome-icon
         class="portfolio-link-icon"
         icon="external-link-alt"
