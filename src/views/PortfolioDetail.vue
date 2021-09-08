@@ -5,7 +5,7 @@
       <nav class="nav">
         <ul class="nav-list">
           <nav-list-item
-            nav-list-item-name="MY PORTFOLIO"
+            nav-list-item-name="Lemon Sour DB"
             @scrollTo="scrollToAnchorPoint('portfolio1')"
           />
           <nav-list-item
@@ -23,35 +23,193 @@
       />
     </transition>
     <section class="portfolio1" ref="portfolio1">
-      <div class="portfolio1-title-box">
-        <div class="portfolio1-title">MY PORTFOLIO</div>
-      </div>
-      <div class="portfolio1-container">
-        <p>COMING SOON!</p>
+      <div class="pf1-title">Lemon Sour DB</div>
+      <div class="pf1-container">
+        <div class="pf1-text-item">
+          <p>市販レモンサワーデータベース兼アルコール摂取量計算アプリ。</p>
+          <p>レモンサワーを選択してアルコール摂取量を計算、カレンダーに記録を反映することができます。</p>
+          <p>フロントエンドをVue.jsで、バックエンドをRailsで構築しました。</p>
+          <p class="p-last">環境をDockerで構築し、CircleCIで継続的インテグレーションを実施、最終はAWS FARGATEでデプロイしています。</p>
+        </div>
+        <hooper
+          v-if="hooperSize"
+          class="pf1-pc-images-slide"
+          :settings="pcHooperSettings"
+        >
+          <slide>
+            <img src="../assets/lsdb-pc-top.png" alt="ポートフォリオのイメージ" class="pf1-pc-image">
+          </slide>
+          <slide>
+            <img src="../assets/lsdb-pc-sours-index.png" alt="ポートフォリオのイメージ" class="pf1-pc-image">
+          </slide>
+          <slide>
+            <img src="../assets/lsdb-pc-sour.png" alt="ポートフォリオのイメージ" class="pf1-pc-image">
+          </slide>
+          <slide>
+            <img src="../assets/lsdb-pc-calc.png" alt="ポートフォリオのイメージ" class="pf1-pc-image">
+          </slide>
+          <slide>
+            <img src="../assets/lsdb-pc-calendar.png" alt="ポートフォリオのイメージ" class="pf1-pc-image">
+          </slide>
+          <slide>
+            <img src="../assets/lsdb-pc-user.png" alt="ポートフォリオのイメージ" class="pf1-pc-image">
+          </slide>
+          <hooper-navigation slot="hooper-addons"></hooper-navigation>
+          <hooper-pagination slot="hooper-addons"></hooper-pagination>
+        </hooper>
+        <hooper
+          v-else
+          class="pf1-sp-images-slide"
+          :settings="spHoperSettings"
+        >
+          <slide>
+            <img src="../assets/lsdb-sp-top.png" alt="ポートフォリオのイメージ" class="pf1-sp-image">
+          </slide>
+          <slide>
+            <img src="../assets/lsdb-sp-sours-index.png" alt="ポートフォリオのイメージ" class="pf1-sp-image">
+          </slide>
+          <slide>
+            <img src="../assets/lsdb-sp-sour.png" alt="ポートフォリオのイメージ" class="pf1-sp-image">
+          </slide>
+          <slide>
+            <img src="../assets/lsdb-sp-calc.png" alt="ポートフォリオのイメージ" class="pf1-sp-image">
+          </slide>
+          <slide>
+            <img src="../assets/lsdb-sp-calendar.png" alt="ポートフォリオのイメージ" class="pf1-sp-image">
+          </slide>
+          <slide>
+            <img src="../assets/lsdb-sp-user.png" alt="ポートフォリオのイメージ" class="pf1-sp-image">
+          </slide>
+          <hooper-navigation slot="hooper-addons"></hooper-navigation>
+          <hooper-pagination slot="hooper-addons"></hooper-pagination>
+        </hooper>
+        <table class="pf1-table">
+          <tr>
+            <th>種類</th>
+            <th>名前</th>
+            <th>バージョン・URL</th>
+          </tr>
+          <tr>
+            <td>フロント</td>
+            <td>
+              Vue.js<br>
+              (Vue CLI)
+            </td>
+            <td>
+              2.6.14<br>
+              (4.5.13)
+            </td>
+          </tr>
+          <tr>
+            <td>バック</td>
+            <td>
+              Ruby on Rails<br>
+              (Ruby)
+            </td>
+            <td>
+              6.0.3.7<br>
+              (2.7.2)
+            </td>
+          </tr>
+          <tr>
+            <td>
+              テストフレームワーク
+            </td>
+            <td>
+              Jest<br>
+              Puppeteer<br>
+              RSpec
+            </td>
+            <td>
+              26.6.3<br>
+              8.0.0<br>
+              4.0.2
+            </td>
+          </tr>
+          <tr>
+            <td>環境構築</td>
+            <td>
+              Docker<br>
+              (Node.js)<br>
+              Docker Compose
+            </td>
+            <td>
+              20.10.8<br>
+              (14-slim)<br>
+              3.8
+            </td>
+          </tr>
+          <tr>
+            <td>ソースコード管理</td>
+            <td>Github</td>
+            <td>
+              <a href="https://github.com/t-kawamura1/lemon-sour-db-front">
+                https://github.com/t-kawamura1/lemon-sour-db-front
+                <font-awesome-icon
+                  class="pf1-table-link-icon"
+                  icon="external-link-alt"
+                ></font-awesome-icon>
+              </a>
+              <br>
+              <a href="https://github.com/t-kawamura1/lemon-sour-db-api">
+                https://github.com/t-kawamura1/lemon-sour-db-api
+                <font-awesome-icon
+                  class="pf1-table-link-icon"
+                  icon="external-link-alt"
+                ></font-awesome-icon>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>CIツール</td>
+            <td>CircleCI</td>
+            <td>2.1</td>
+          </tr>
+          <tr>
+            <td>ホスティング</td>
+            <td>AWS ECS/FARGATE</td>
+            <td>
+              <a href="https://lemonsourdb.net">
+                フロント https://lemonsourdb.net
+                <font-awesome-icon
+                  class="pf1-table-link-icon"
+                  icon="external-link-alt"
+                ></font-awesome-icon>
+              </a>
+              <br>
+              <a href="https://lsdb-back.work">
+                バック https://lsdb-back.work
+                <font-awesome-icon
+                  class="pf1-table-link-icon"
+                  icon="external-link-alt"
+                ></font-awesome-icon>
+              </a>
+            </td>
+          </tr>
+        </table>
       </div>
     </section>
     <section class="portfolio2" ref="portfolio2">
-      <div class="portfolio2-title-box">
-        <div class="portfolio2-title">T.KAWAMURA</div>
-        <div class="portfolio2-title">ポートフォリオサイト</div>
+      <div class="pf2-title-box">
+        <div class="pf2-title">T.KAWAMURA</div>
+        <div class="pf2-title">ポートフォリオサイト</div>
       </div>
-      <div class="portfolio2-container">
-        <div class="portfolio2-image-item-wrapper">
-          <div class="portfolio2-image-item">
-            <div class="portfolio2-image-box">
-              <img src="../assets/pfsite-overall.png" alt="ポートフォリオサイトのイメージ" class="portfolio2-image">
+      <div class="pf2-container">
+        <div class="pf2-image-item-wrapper">
+          <div class="pf2-image-item">
+            <div class="pf2-image-box">
+              <img src="../assets/pfsite-overall.png" alt="ポートフォリオサイトのイメージ" class="pf2-image">
             </div>
             <p class="note">※ 画像は開発中の画面です。</p>
           </div>
         </div>
-        <div class="portfolio2-text-item">
-          <p>Vue.jsの扱いに慣れるため、試しに作成した静的サイト。</p>
+        <div class="pf2-text-item">
+          <p>扱いに慣れるために、Vue.jsで初めて作成した静的サイト。</p>
           <p>シンプルで見やすいデザインを意識しました。</p>
-          <p>開発の過程で、Atomic Designを始めとしたコンポーネント設計手法を学習。</p>
-          <p>CSSについても、BEM等の適切な設計手法について学習。</p>
-          <p>サイト・アプリの規模に応じた設計手法を採用していきます。</p>
-          <p class="p-last">開発過程についても、git-flowを意識したワークフローを取り入れました。</p>
-          <table class="portfolio2-table">
+          <p>規模の小さいサイトですが、学習目的でDockerを導入しています。</p>
+          <p>この開発を通じてコンポネート・CSS設計の重要性を学びました。</p>
+          <p class="p-last">開発過程についても、git-flowを意識したワークフローを取り入れています。</p>
+          <table class="pf2-table">
             <tr>
               <th>種類</th>
               <th>名前</th>
@@ -98,6 +256,10 @@
               <td>
                 <a href="https://github.com/t-kawamura1/portfolio-site">
                   https://github.com/t-kawamura1/portfolio-site
+                  <font-awesome-icon
+                    class="pf2-table-link-icon"
+                    icon="external-link-alt"
+                  ></font-awesome-icon>
                 </a>
               </td>
             </tr>
@@ -107,6 +269,10 @@
               <td>
                 <a href="https://t-kawamura.netlify.app">
                   https://t-kawamura.netlify.app
+                  <font-awesome-icon
+                    class="pf2-table-link-icon"
+                    icon="external-link-alt"
+                  ></font-awesome-icon>
                 </a>
               </td>
             </tr>
@@ -121,28 +287,63 @@
 import Logo from '@/components/shared/Logo'
 import NavListItem from '@/components/shared/NavListItem'
 import ToTopButton from '@/components/shared/ToTopButton'
+import {
+  Hooper,
+  Slide,
+  Pagination as HooperPagination,
+  Navigation as HooperNavigation
+} from 'hooper';
+import 'hooper/dist/hooper.css';
 
 export default {
   components: {
     Logo,
     NavListItem,
     ToTopButton,
+    Hooper,
+    Slide,
+    HooperPagination,
+    HooperNavigation,
   },
   data() {
     return {
-      show: false
+      show: false,
+      pcHooperSettings: {
+        itemsToShow: 1,
+        centerMode: true,
+        autoPlay: true,
+        playSpeed: 2000,
+        infiniteScroll: true,
+      },
+      spHooperSettings: {
+        itemsToShow: 1,
+        centerMode: true,
+        vertical: true,
+        autoPlay: true,
+        playSpeed: 2000,
+        infiniteScroll: true,
+      },
+      hooperSize: true,
     }
   },
   methods: {
     scrollToAnchorPoint(refName) {
       const el = this.$refs[refName];
       el.scrollIntoView({ behavior: 'smooth'});
+    },
+    judgeMediaQuery() {
+      if (window.innerWidth > 768) {
+        this.hooperSize = true;
+      } else {
+        this.hooperSize = false;
+      }
     }
   },
   created() {
     window.addEventListener('scroll', () => {
       this.show = (window.scrollY > 400);
     });
+    this.judgeMediaQuery();
   },
   mounted(){
     const title = "ポートフォリオ詳細 | T.KAWAMURA ポートフォリオサイト"
@@ -151,6 +352,7 @@ export default {
     document.head.querySelector('[property$=title]').setAttribute('content', title)
     document.head.querySelector('[name="description"]').setAttribute('content', description)
     document.head.querySelector('[property$=description]').setAttribute('content', description)
+    window.addEventListener('resize', this.judgeMediaQuery)
   }
 }
 </script>
@@ -196,21 +398,63 @@ export default {
   .portfolio1 {
     padding: 150px 60px 100px;
     background-color: #f5f5f5;
-    .portfolio1-title {
+    .pf1-title {
       display: inline-block;
       font-size: 3rem;
       color: #636363;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       margin-bottom: 60px;
-    } 
+    }
+    .pf1-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.8;
+      .pf1-text-item {
+        > p {
+          text-align: center;
+        }
+        .p-last {
+          margin-bottom: 30px;
+        }
+      }
+      .pf1-pc-images-slide {
+        width: 500px;
+        height: 273px;
+        margin-bottom: 40px;
+        .hooper-slide {
+          .pf1-pc-image {
+            width: 500px;
+            height: 273px;
+            border-radius: 10px;
+          }
+        }
+      }
+      .pf1-table {
+        border-collapse: collapse;
+        background-color: #f1f1f1;
+        th, td {
+          border: solid 1px #636363;
+          padding: 0 5px;
+          > a {
+            &:hover {
+              opacity: 0.7;
+            }
+            .pf1-table-link-icon {
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+    }
   }
 
   .portfolio2 {
-    padding: 150px 60px;
+    padding: 150px 60px 90px;
     background-color: #777;
-    .portfolio2-title-box {
+    .pf2-title-box {
       margin-bottom: 90px;
-      .portfolio2-title {
+      .pf2-title {
         display: inline-block;
         font-size: 3rem;
         color: #fff;
@@ -221,13 +465,13 @@ export default {
         }
       }
     }
-    .portfolio2-container {
+    .pf2-container {
       display: flex;
       justify-content: space-between;
-      .portfolio2-image-item-wrapper {
+      .pf2-image-item-wrapper {
         width: 476px;
         height: 580px;
-        .portfolio2-image-item {
+        .pf2-image-item {
           position: relative;
           width: 476px;
           height: 500px;
@@ -251,7 +495,7 @@ export default {
             width: 100%;
             height: 40px;
           }
-          .portfolio2-image-box {
+          .pf2-image-box {
             width: 474px;
             height: 500px;
             margin-bottom: 30px;
@@ -261,7 +505,7 @@ export default {
             &::-webkit-scrollbar {
               display:none;
             }
-            .portfolio2-image {
+            .pf2-image {
               width: 474px;
               height: 1580px;
               &:hover {
@@ -271,7 +515,7 @@ export default {
           }
         }
       }
-      .portfolio2-text-item {
+      .pf2-text-item {
         line-height: 2;
         color: #fff;
         margin-left: 30px;
@@ -282,7 +526,7 @@ export default {
         .p-last {
           margin-bottom: 30px;
         }
-        .portfolio2-table {
+        .pf2-table {
           border-collapse: collapse;
           background-color: #666;
           th, td {
@@ -292,6 +536,9 @@ export default {
               color: #fff;
               &:hover {
                 opacity: 0.7;
+              }
+              .pf2-table-link-icon {
+                margin-left: 5px;
               }
             }
           }
@@ -319,27 +566,55 @@ export default {
       }
     }
 
+    .portfolio1{
+      padding: 90px 20px 60px;
+      .pf1-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+        letter-spacing: 1px;
+      }
+      .pf1-container {
+        .pf1-text-item {
+          font-size: 1.4rem;
+          line-height: 1.8;
+        }
+        .pf1-sp-images-slide {
+          widows: 210px;
+          height: 455px;
+          margin-bottom: 20px;
+          .pf1-sp-image {
+            width: 210px;
+            height: 455px;
+            border-radius: 10px;
+          }
+        }
+        .pf1-table {
+          font-size: 1rem;
+        }
+      }
+    }
+
     .portfolio2 {
       padding: 50px 10px;
-      .portfolio2-title-box {
+      .pf2-title-box {
         margin-bottom: 30px;
-        .portfolio2-title {
+        .pf2-title {
           display: block;
           font-size: 2rem;
-          line-height: 2;
+          line-height: 1.5;
           &:last-child {
             margin-left: 0;
           }
         }
       }
-      .portfolio2-container {
+      .pf2-container {
         flex-direction: column;
         align-items: center;
         font-size: 1.4rem;
-        .portfolio2-image-item-wrapper {
+        .pf2-image-item-wrapper {
           width: 318px;
           height: 400px;
-          .portfolio2-image-item {
+          .pf2-image-item {
             width: 318px;
             height: 333px;
             &::before {
@@ -348,7 +623,7 @@ export default {
             &::after {
               height: 20px;
             }
-            .portfolio2-image-box {
+            .pf2-image-box {
               width: 316px;
               height: 333px;
               margin-bottom: 15px;
@@ -358,7 +633,7 @@ export default {
               &::-webkit-scrollbar {
                 display:none;
               }
-              .portfolio2-image {
+              .pf2-image {
                 width: 316px;
                 height: 1053px;
                 &:hover {
@@ -368,12 +643,15 @@ export default {
             }
           }
         }
-        .portfolio2-text-item {
+        .pf2-text-item {
           margin-left: 0;
-          .portfolio2-table {
+          padding: 0 10px;
+          line-height: 1.6;
+          .pf2-table {
+            font-size: 1rem;
             th, td {
               > a:hover {
-                  opacity: 1;
+                opacity: 1;
               }
             }
           }

@@ -2,7 +2,13 @@
   <div class="portfolio-item">
     <img :src="portfolioImgSrc" alt="サイトスクリーンショット" class="site-image">
     <div class="portfolio-title">{{ portfolioTitle }}</div>
-    <a href="https://t-kawamura.netlify.app" class="portfolio-link">{{ portfolioUrl }}</a>
+    <a href="https://t-kawamura.netlify.app" class="portfolio-link">
+      <font-awesome-icon
+        class="portfolio-link-icon"
+        icon="external-link-alt"
+      ></font-awesome-icon>
+      {{ portfolioUrl }}
+    </a>
     <p class="portfolio-text">{{ portfolioText }}</p>
     <button-bright button-text="もっと詳しく" @showMoreDetail="toPortfolioDetail"/>
   </div>
@@ -41,8 +47,8 @@ export default {
   width: 100%;
   }
   .portfolio-title {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+    font-size: 2rem;
+    margin-bottom: 20px;
     letter-spacing: 1px;
   }
   .portfolio-link {
@@ -52,30 +58,14 @@ export default {
     &:hover {
       opacity: 0.8;
     }
+    .portfolio-link-icon {
+      margin-right: 5px;
+    }
   }
   .portfolio-text {
     margin-bottom: 30px;
     line-height: 2;
     text-align: left;
-  }
-  &:first-child::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  &:first-child:after {
-    content: 'COMING SOON';
-    position: absolute;
-    width: 100%;
-    color: #fff;
-    font-size: 3rem;
-    top: 20%;
-    left: 0;
-    letter-spacing: 3px;
   }
 }
 
@@ -93,7 +83,7 @@ export default {
       margin-bottom: 30px;
     }
     .portfolio-title {
-      font-size: 1.8rem;
+      font-size: 1.7rem;
     }
     .portfolio-link {
       font-size: 1.5rem;

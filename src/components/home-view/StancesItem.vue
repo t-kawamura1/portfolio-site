@@ -18,7 +18,7 @@ export default {
 .stances-item {
   width: 40%;
   .stance-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 30px;
   }
   .stance-text {

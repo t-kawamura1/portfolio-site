@@ -19,7 +19,7 @@ export default {
 .button-dark {
   display: inline-block;
   width: 200px;
-  padding: 20px;
+  padding: 15px;
   border-radius: 4px;
   background-color: #777;
   color: #fff;
@@ -34,7 +34,7 @@ export default {
 
 @media (max-width: 768px) {
   .button-dark {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     &:hover {
       background-color: #777;
     }

@@ -19,16 +19,17 @@ export default {
 .button-bright {
   display: inline-block;
   width: 200px;
-  padding: 20px;
+  padding: 15px;
   border-radius: 4px;
   background-color: #777;
   color: #fff;
   border: 1px solid #fff;
   letter-spacing: 1px;
-  font-size: 2rem;
+  font-size: 1.8rem;
   &:hover{
     background-color: rgba(255, 255, 255, 0.4);
     transition: 0.2s;
+    cursor: pointer;
   }
 }
 
@@ -36,7 +37,7 @@ export default {
   .button-bright {
     width: 150px;
     padding: 10px;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     &:hover{
       background-color: #777;
       cursor: pointer;
