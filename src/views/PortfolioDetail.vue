@@ -265,7 +265,7 @@
             </tr>
             <tr>
               <td>ホスティング</td>
-              <td>Netlify</td>
+              <td>AWS S3 / CloudFront</td>
               <td>
                 <a href="https://www.t-kawamura.com">
                   https://www.t-kawamura.com
