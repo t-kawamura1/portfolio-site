@@ -61,7 +61,7 @@
         <portfolio-item
           :portfolioImgSrc="portfolioImgSrc[1]"
           portfolio-title="T.KAWAMURA ポートフォリオサイト"
-          portfolio-url="https://t-kawamura.netlify.app/"
+          portfolio-url="https://www.t-kawamura.com"
           portfolio-text="
             このサイト自身です。Vue.jsで作成しました。
             本人全然そんな人ではないのに、少し気取って作ってます。

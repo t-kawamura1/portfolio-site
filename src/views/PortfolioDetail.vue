@@ -9,7 +9,7 @@
             @scrollTo="scrollToAnchorPoint('portfolio1')"
           />
           <nav-list-item
-            nav-list-item-name="T.KWAMURA"
+            nav-list-item-name="T.KAWAMURA"
             @scrollTo="scrollToAnchorPoint('portfolio2')"
           />
         </ul>
@@ -267,8 +267,8 @@
               <td>ホスティング</td>
               <td>Netlify</td>
               <td>
-                <a href="https://t-kawamura.netlify.app">
-                  https://t-kawamura.netlify.app
+                <a href="https://www.t-kawamura.com">
+                  https://www.t-kawamura.com
                   <font-awesome-icon
                     class="pf2-table-link-icon"
                     icon="external-link-alt"
