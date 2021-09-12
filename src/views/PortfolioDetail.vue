@@ -9,7 +9,7 @@
             @scrollTo="scrollToAnchorPoint('portfolio1')"
           />
           <nav-list-item
-            nav-list-item-name="T.KWAMURA"
+            nav-list-item-name="T.KAWAMURA"
             @scrollTo="scrollToAnchorPoint('portfolio2')"
           />
         </ul>
@@ -265,10 +265,10 @@
             </tr>
             <tr>
               <td>ホスティング</td>
-              <td>Netlify</td>
+              <td>AWS S3 / CloudFront</td>
               <td>
-                <a href="https://t-kawamura.netlify.app">
-                  https://t-kawamura.netlify.app
+                <a href="https://www.t-kawamura.com">
+                  https://www.t-kawamura.com
                   <font-awesome-icon
                     class="pf2-table-link-icon"
                     icon="external-link-alt"
@@ -345,13 +345,7 @@ export default {
     });
     this.judgeMediaQuery();
   },
-  mounted(){
-    const title = "ポートフォリオ詳細 | T.KAWAMURA ポートフォリオサイト"
-    const description = "Webエンジニアを目指す河村智之のポートフォリオサイトです。ここでは私のポートフォリオを紹介します。"
-    document.title = title
-    document.head.querySelector('[property$=title]').setAttribute('content', title)
-    document.head.querySelector('[name="description"]').setAttribute('content', description)
-    document.head.querySelector('[property$=description]').setAttribute('content', description)
+  mounted() {
     window.addEventListener('resize', this.judgeMediaQuery)
   }
 }

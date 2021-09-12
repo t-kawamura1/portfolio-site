@@ -61,7 +61,7 @@
         <portfolio-item
           :portfolioImgSrc="portfolioImgSrc[1]"
           portfolio-title="T.KAWAMURA ポートフォリオサイト"
-          portfolio-url="https://t-kawamura.netlify.app/"
+          portfolio-url="https://www.t-kawamura.com"
           portfolio-text="
             このサイト自身です。Vue.jsで作成しました。
             本人全然そんな人ではないのに、少し気取って作ってます。
@@ -220,14 +220,6 @@ export default {
       this.show = (window.scrollY > 500);
     });
   },
-  mounted(){
-    const title = "T.KAWAMURA ポートフォリオサイト"
-    const description = "Webエンジニアを目指す河村智之のポートフォリオサイトです。"
-    document.title = title
-    document.head.querySelector('[property="og:title"]').setAttribute('content', title)
-    document.head.querySelector('[name="description"]').setAttribute('content', description)
-    document.head.querySelector('[property="og:description"]').setAttribute('content', description)
-  }
 }
 </script>
 
