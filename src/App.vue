@@ -17,11 +17,34 @@ export default {
       loading: true
     }
   },
+  methods: {
+    createTitleAndDescription(routeInstance) {
+      if (routeInstance.meta.title) {
+        const setTitle = routeInstance.meta.title + " | T.KAWAMURA ポートフォリオサイト";
+        document.title = setTitle;
+      } else {
+        document.title = "T.KAWAMURA ポートフォリオサイト";
+      }
+      if (routeInstance.meta.desc) {
+        const setDesc = routeInstance.meta.desc + " | T.KAWAMURA ポートフォリオサイト";
+        document
+          .querySelector("meta[name='description']")
+          .setAttribute("content", setDesc);
+      }
+    },
+  },
   mounted() {
     setTimeout(() => {
       this.loading = false;
     }, 1000);
-  }
+    const routeInstance = this.$route;
+    this.createTitleAndDescription(routeInstance);
+  },
+  watch: {
+    $route(routeInstance) {
+      this.createTitleAndDescription(routeInstance);
+    },
+  },
 }
 </script>
 

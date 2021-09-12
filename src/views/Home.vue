@@ -220,14 +220,6 @@ export default {
       this.show = (window.scrollY > 500);
     });
   },
-  mounted(){
-    const title = "T.KAWAMURA ポートフォリオサイト"
-    const description = "Webエンジニアを目指す河村智之のポートフォリオサイトです。"
-    document.title = title
-    document.head.querySelector('[property="og:title"]').setAttribute('content', title)
-    document.head.querySelector('[name="description"]').setAttribute('content', description)
-    document.head.querySelector('[property="og:description"]').setAttribute('content', description)
-  }
 }
 </script>
 

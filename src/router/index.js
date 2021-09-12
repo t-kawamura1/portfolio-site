@@ -9,12 +9,19 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: {
+      desc: "Webエンジニアを目指す河村智之のポートフォリオサイトです。",
+    },
   },
   {
     path: '/portfolio-detail',
     name: 'PortfolioDetail',
-    component: PortfolioDetail
+    component: PortfolioDetail,
+    meta: {
+      title: "ポートフォリオ詳細",
+      desc: "Webエンジニアを目指す河村智之のポートフォリオサイトです。ここでは私のポートフォリオを紹介します。",
+    },
   }
 ]
 

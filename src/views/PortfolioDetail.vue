@@ -345,13 +345,7 @@ export default {
     });
     this.judgeMediaQuery();
   },
-  mounted(){
-    const title = "ポートフォリオ詳細 | T.KAWAMURA ポートフォリオサイト"
-    const description = "Webエンジニアを目指す河村智之のポートフォリオサイトです。ここでは私のポートフォリオを紹介します。"
-    document.title = title
-    document.head.querySelector('[property$=title]').setAttribute('content', title)
-    document.head.querySelector('[name="description"]').setAttribute('content', description)
-    document.head.querySelector('[property$=description]').setAttribute('content', description)
+  mounted() {
     window.addEventListener('resize', this.judgeMediaQuery)
   }
 }
