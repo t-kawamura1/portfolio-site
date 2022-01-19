@@ -146,8 +146,8 @@
           </p>
         </div>
         <div class="external-link-item">
-          <a href="https://github.com/t-kawamura1" class="github"><font-awesome-icon :icon="['fab', 'github']" /></a>
-          <a href="https://twitter.com/kossari" class="twitter"><font-awesome-icon :icon="['fab', 'twitter-square']" /></a>
+          <a href="https://github.com/t-kawamura1" class="github"><fab :icon="{ prefix: 'fab', iconName: 'github'}" /></a>
+          <a href="https://twitter.com/kossari" class="twitter"><fab :icon="{ prefix: 'fab', iconName: 'twitter-square'}" /></a>
           <a href="https://itiiki.hatenablog.com/" class="hatena"><img src="../assets/hatena.svg" alt="はてなブログロゴ" class="hatena-logo"></a>
           <a href="https://www.wantedly.com/id/t_kawa/connections/impression" class="wantedly"><img src="../assets/wantedly.svg" alt="wantedlyロゴ" class="wantedly-logo"></a>
           <a href="https://qiita.com/t-kawamura1" class="qiita"><img src="../assets/qiita.png" alt="Qiitaロゴ" class="qiita-logo"></a>

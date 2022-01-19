@@ -1,22 +1,22 @@
 <template>
   <div id="app">
-    <Loading v-show="loading"/>
-    <router-view v-show="!loading"/>
+    <!-- <Loading v-show="loading"/> -->
+    <router-view />
   </div>
 </template>
 
 <script>
-import Loading from '@/components/Loading'
+// import Loading from '@/components/Loading'
 
 export default {
-  components: {
-    Loading
-  },
-  data() {
-    return {
-      loading: true
-    }
-  },
+  // components: {
+  //   Loading
+  // },
+  // data() {
+  //   return {
+  //     loading: true
+  //   }
+  // },
   methods: {
     createTitleAndDescription(routeInstance) {
       if (routeInstance.meta.title) {
@@ -34,9 +34,9 @@ export default {
     },
   },
   mounted() {
-    setTimeout(() => {
-      this.loading = false;
-    }, 1000);
+    // setTimeout(() => {
+    //   this.loading = false;
+    // }, 1000);
     const routeInstance = this.$route;
     this.createTitleAndDescription(routeInstance);
   },

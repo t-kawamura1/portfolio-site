@@ -1,9 +1,7 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import  { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home'
 import PortfolioDetail from '../views/PortfolioDetail'
 
-Vue.use(VueRouter)
 
 const routes = [
   {
@@ -25,15 +23,14 @@ const routes = [
   }
 ]
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
+const router = createRouter({
+  history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition
     } else {
-      return { x: 0, y: 0 }
+      return { top: 0, left: 0 }
     }
   }
 })

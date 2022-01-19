@@ -3,10 +3,10 @@
     <img :src="portfolioImgSrc" alt="サイトスクリーンショット" class="site-image">
     <div class="portfolio-title">{{ portfolioTitle }}</div>
     <a :href="portfolioUrl" class="portfolio-link">
-      <font-awesome-icon
+      <fas
         class="portfolio-link-icon"
         icon="external-link-alt"
-      ></font-awesome-icon>
+      ></fas>
       {{ portfolioUrl }}
     </a>
     <p class="portfolio-text">{{ portfolioText }}</p>

@@ -31,7 +31,7 @@
           <p>フロントエンドをVue.jsで、バックエンドをRailsで構築しました。</p>
           <p class="p-last">環境をDockerで構築し、CircleCIで継続的インテグレーションを実施、最終はAWS FARGATEでデプロイしています。</p>
         </div>
-        <hooper
+        <!-- <hooper
           v-if="hooperSize"
           class="pf1-pc-images-slide"
           :settings="pcHooperSettings"
@@ -82,7 +82,7 @@
           </slide>
           <hooper-navigation slot="hooper-addons"></hooper-navigation>
           <hooper-pagination slot="hooper-addons"></hooper-pagination>
-        </hooper>
+        </hooper> -->
         <table class="pf1-table">
           <tr>
             <th>種類</th>
@@ -145,18 +145,18 @@
             <td>
               <a href="https://github.com/t-kawamura1/lemon-sour-db-front">
                 https://github.com/t-kawamura1/lemon-sour-db-front
-                <font-awesome-icon
+                <fas
                   class="pf1-table-link-icon"
                   icon="external-link-alt"
-                ></font-awesome-icon>
+                ></fas>
               </a>
               <br>
               <a href="https://github.com/t-kawamura1/lemon-sour-db-api">
                 https://github.com/t-kawamura1/lemon-sour-db-api
-                <font-awesome-icon
+                <fas
                   class="pf1-table-link-icon"
                   icon="external-link-alt"
-                ></font-awesome-icon>
+                ></fas>
               </a>
             </td>
           </tr>
@@ -171,18 +171,18 @@
             <td>
               <a href="https://lemonsourdb.net">
                 フロント https://lemonsourdb.net
-                <font-awesome-icon
+                <fas
                   class="pf1-table-link-icon"
                   icon="external-link-alt"
-                ></font-awesome-icon>
+                ></fas>
               </a>
               <br>
               <a href="https://lsdb-back.work">
                 バック https://lsdb-back.work
-                <font-awesome-icon
+                <fas
                   class="pf1-table-link-icon"
                   icon="external-link-alt"
-                ></font-awesome-icon>
+                ></fas>
               </a>
             </td>
           </tr>
@@ -256,10 +256,10 @@
               <td>
                 <a href="https://github.com/t-kawamura1/portfolio-site">
                   https://github.com/t-kawamura1/portfolio-site
-                  <font-awesome-icon
+                  <fas
                     class="pf2-table-link-icon"
                     icon="external-link-alt"
-                  ></font-awesome-icon>
+                  ></fas>
                 </a>
               </td>
             </tr>
@@ -269,10 +269,10 @@
               <td>
                 <a href="https://www.t-kawamura.com">
                   https://www.t-kawamura.com
-                  <font-awesome-icon
+                  <fas
                     class="pf2-table-link-icon"
                     icon="external-link-alt"
-                  ></font-awesome-icon>
+                  ></fas>
                 </a>
               </td>
             </tr>
@@ -287,43 +287,16 @@
 import Logo from '@/components/shared/Logo'
 import NavListItem from '@/components/shared/NavListItem'
 import ToTopButton from '@/components/shared/ToTopButton'
-import {
-  Hooper,
-  Slide,
-  Pagination as HooperPagination,
-  Navigation as HooperNavigation
-} from 'hooper';
-import 'hooper/dist/hooper.css';
 
 export default {
   components: {
     Logo,
     NavListItem,
     ToTopButton,
-    Hooper,
-    Slide,
-    HooperPagination,
-    HooperNavigation,
   },
   data() {
     return {
       show: false,
-      pcHooperSettings: {
-        itemsToShow: 1,
-        centerMode: true,
-        autoPlay: true,
-        playSpeed: 2000,
-        infiniteScroll: true,
-      },
-      spHooperSettings: {
-        itemsToShow: 1,
-        centerMode: true,
-        vertical: true,
-        autoPlay: true,
-        playSpeed: 2000,
-        infiniteScroll: true,
-      },
-      hooperSize: true,
     }
   },
   methods: {
@@ -331,23 +304,12 @@ export default {
       const el = this.$refs[refName];
       el.scrollIntoView({ behavior: 'smooth'});
     },
-    judgeMediaQuery() {
-      if (window.innerWidth > 768) {
-        this.hooperSize = true;
-      } else {
-        this.hooperSize = false;
-      }
-    }
   },
   created() {
     window.addEventListener('scroll', () => {
       this.show = (window.scrollY > 400);
     });
-    this.judgeMediaQuery();
   },
-  mounted() {
-    window.addEventListener('resize', this.judgeMediaQuery)
-  }
 }
 </script>
 
